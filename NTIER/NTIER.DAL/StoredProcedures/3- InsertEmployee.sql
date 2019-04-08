@@ -1,4 +1,25 @@
 ﻿
+CREATE PROC INSERT_EMPLOYEE
+    @BusinessEntityID int,
+    @JobTitle nvarchar(50),
+    @BirthDate date
+AS 
+BEGIN
+	
+	INSERT INTO [HumanResources].[Employee] ([BusinessEntityID], [NationalIDNumber], [LoginID], [JobTitle], [BirthDate], [MaritalStatus], [Gender], [HireDate], [SalariedFlag], [VacationHours], [SickLeaveHours], [CurrentFlag], [ModifiedDate])
+	VALUES (@BusinessEntityID, '509647170', 'adventure-works\haso0', @JobTitle, @BirthDate, 'M', 'M', GETDATE(), 1, 24, 30, 1, GETDATE())
+
+END
+
+
+
+
+
+
+
+
+
+
 CREATE PROC [HumanResources].[usp_EmployeeInsert] 
     @BusinessEntityID int,
     @NationalIDNumber nvarchar(15),

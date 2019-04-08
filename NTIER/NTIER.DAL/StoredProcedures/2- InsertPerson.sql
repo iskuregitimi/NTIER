@@ -1,4 +1,23 @@
-﻿CREATE PROC [Person].[usp_PersonInsert] 
+﻿ALTER PROC INSERT_PERSON
+    @BusinessEntityID int,
+    @Title nvarchar(8) = NULL,
+    @FirstName nvarchar(50),
+    @MiddleName nvarchar(50) = NULL,
+    @LastName nvarchar(50)
+AS 
+BEGIN
+	INSERT INTO [Person].[Person] ([BusinessEntityID], [PersonType], [Title], [FirstName], [MiddleName], [LastName], [Suffix], [EmailPromotion], [ModifiedDate])
+	VALUES (@BusinessEntityID, 'EM', @Title, @FirstName, @MiddleName, @LastName, NULL, 2, GETDATE())
+	
+END
+
+
+
+
+
+
+
+CREATE PROC [Person].[usp_PersonInsert] 
     @BusinessEntityID int,
     @PersonType nchar(2),
     @NameStyle NameStyle,
