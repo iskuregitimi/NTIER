@@ -44,12 +44,12 @@ namespace NTIER.DAL
 
         public static void InsertPerson(Person person)
         {
-
+            //TODO: insert person kodu yazılacak
         }
 
         public static void InsertEmployee(Employee employee)
         {
-
+            //TODO: insert employee kodu yazılacak
         }
     }
 }
