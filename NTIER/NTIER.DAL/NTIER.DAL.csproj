@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="StoredProcedures\1- INSERT_BUSINESS_ENTITY.sql" />
+    <Content Include="StoredProcedures\2- InsertPerson.sql" />
+    <Content Include="StoredProcedures\3- InsertEmployee.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
