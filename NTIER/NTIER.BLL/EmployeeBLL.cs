@@ -19,6 +19,12 @@ namespace NTIER.BLL
                 throw new Exception("18 yaşından küçük personel insert edilemez");
             }
 
+
+            if (DataContext.IsEmployeeExists(person))
+            {
+                throw new Exception("Aynı isimle personel insert edilemez");
+            }
+
             //DataContext.InsertEmployeeWithTransaction(employee, person);
 
             BusinessEntity be = DataContext.InsertBusinessEntity();

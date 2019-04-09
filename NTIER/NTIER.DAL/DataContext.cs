@@ -22,16 +22,47 @@ namespace NTIER.DAL
         }
 
 
-        public static BusinessEntity InsertBusinessEntity(SqlTransaction current = null)
+        public static bool IsEmployeeExists(Person person)
+        {
+            SqlCommand cmd = new SqlCommand("SELEC_PERSON_BY_NAME", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@FirstName", person.FirstName);
+            cmd.Parameters.AddWithValue("@MiddleName", person.MiddleName);
+            cmd.Parameters.AddWithValue("@LastName", person.LastName);
+
+
+
+            Connection.Open();
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            Person entity = new Person();
+            while (dr.Read())
+            {
+                entity.BusinessEntityID = (int)dr["BusinessEntityID"];
+            }
+
+            dr.Close();
+
+
+            Connection.Close();
+
+            if (entity.BusinessEntityID > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public static BusinessEntity InsertBusinessEntity()
         {
             SqlCommand cmd = new SqlCommand("INSERT_BUSINESS_ENTITY", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Transaction = current;
-            if (cmd.Transaction == null)
-            {
-                Connection.Open();
-            }
+
+            Connection.Open();
 
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -44,16 +75,15 @@ namespace NTIER.DAL
 
             dr.Close();
 
-            if (cmd.Transaction == null)
-            {
-                Connection.Close();
-            }
+
+            Connection.Close();
+
 
             return entity;
         }
 
 
-        public static void InsertPerson(Person person, SqlTransaction current = null)
+        public static void InsertPerson(Person person)
         {
 
             SqlCommand cmd = new SqlCommand("[Person].[usp_PersonInsert]", Connection);
@@ -68,15 +98,13 @@ namespace NTIER.DAL
 
             try
             {
-                cmd.Transaction = current;
+
 
                 if (Connection.State != ConnectionState.Open)
                 {
-                    cmd.Transaction = current;
-                    if (cmd.Transaction == null)
-                    {
-                        Connection.Open();
-                    }
+
+                    Connection.Open();
+
                 }
 
                 cmd.ExecuteNonQuery();
@@ -85,11 +113,7 @@ namespace NTIER.DAL
             {
                 if (Connection.State == ConnectionState.Open)
                 {
-
-                    if (cmd.Transaction == null)
-                    {
-                        Connection.Close();
-                    }
+                    Connection.Close();
                 }
 
                 throw;
@@ -97,7 +121,7 @@ namespace NTIER.DAL
 
         }
 
-        public static void InsertEmployee(Employee employee, SqlTransaction current = null)
+        public static void InsertEmployee(Employee employee)
         {
             SqlCommand cmd = new SqlCommand("[HumanResources].[usp_EmployeeInsert]", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -117,13 +141,12 @@ namespace NTIER.DAL
 
             try
             {
-                cmd.Transaction = current;
+             ;
                 if (Connection.State != ConnectionState.Open)
                 {
-                    if (cmd.Transaction == null)
-                    {
+                 
                         Connection.Open();
-                    }
+                  
                 }
 
                 cmd.ExecuteNonQuery();
@@ -133,10 +156,9 @@ namespace NTIER.DAL
                 if (Connection.State == ConnectionState.Open)
                 {
 
-                    if (cmd.Transaction == null)
-                    {
+                  
                         Connection.Close();
-                    }
+                  
                 }
 
                 throw;
@@ -154,14 +176,14 @@ namespace NTIER.DAL
 
             try
             {
-                var be = InsertBusinessEntity(currentTran);
+                var be = InsertBusinessEntity();
 
                 person.BusinessEntityID = be.BusinessEntityID;
-                InsertPerson(person, currentTran);
+                InsertPerson(person);
 
 
                 employee.BusinessEntityID = be.BusinessEntityID;
-                InsertEmployee(employee, currentTran);
+                InsertEmployee(employee);
 
                 currentTran.Commit();
                 Connection.Close();
