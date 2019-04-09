@@ -167,33 +167,6 @@ namespace NTIER.DAL
         }
 
 
-        public static void InsertEmployeeWithTransaction(Employee employee, Person person)
-        {
 
-            Connection.Open();
-
-            var currentTran = Connection.BeginTransaction();
-
-            try
-            {
-                var be = InsertBusinessEntity();
-
-                person.BusinessEntityID = be.BusinessEntityID;
-                InsertPerson(person);
-
-
-                employee.BusinessEntityID = be.BusinessEntityID;
-                InsertEmployee(employee);
-
-                currentTran.Commit();
-                Connection.Close();
-            }
-            catch (Exception)
-            {
-                currentTran.Rollback();
-                Connection.Close();
-                throw;
-            }
-        }
     }
 }
