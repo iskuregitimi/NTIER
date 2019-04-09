@@ -238,6 +238,17 @@ namespace NTIER.DAL
 
         }
 
+//        //alter proc Insert_EMAİL
+//        @ID int ,
+//@EmailAdress varchar(50)
+//as
+//begin
 
+//INSERT INTO[Person].[EmailAddress]
+//        (BusinessEntityID, EmailAddress, ModifiedDate) values(@ID, @EmailAdress, GETDATE())
+//end
+//Insert_EMAİL 20776,'adasdasdq@adasda.com'
+
+//select* from[Person].[EmailAddress]
     }
 }
