@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NTIER.DAL
 {
@@ -166,6 +167,76 @@ namespace NTIER.DAL
 
         }
 
+         public static void GetPerson(ListBox listBox)
+        {
+
+  
+
+            SqlCommand cmd = new SqlCommand("[dbo].[Get_Person]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            Connection.Open();
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            Person entity = new Person();
+            while (dr.Read())
+            {
+                listBox.Items.Add(dr["BusinessEntityID"].ToString());
+                //listBox.Items.Add(dr["LastName"].ToString());
+            }
+
+            dr.Close();
+
+
+            Connection.Close();
+            
+            
+
+
+
+
+
+        }
+        public static void InsertEmail(int userID,TextBox email)
+        {
+            
+            
+            SqlCommand cmd = new SqlCommand("Insert_EMAİL", Connection);
+            DataTable personTableDetay = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+
+
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = userID;
+            cmd.Parameters.Add("@EmailAdress", SqlDbType.VarChar).Value = email.Text;
+
+
+            try
+            {
+
+
+                if (Connection.State != ConnectionState.Open)
+                {
+
+                    Connection.Open();
+
+                }
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                if (Connection.State == ConnectionState.Open)
+                {
+                    Connection.Close();
+                }
+
+                throw;
+            }
+
+
+        }
 
 
     }

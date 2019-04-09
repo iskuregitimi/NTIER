@@ -23,5 +23,12 @@ namespace NTIER.UI
             dialog.MdiParent = this;
             dialog.Show();
         }
+
+        private void yeniPersonelEMailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Emaillist email = new Emaillist();
+            //MdiParent = this;
+            email.Show();
+        }
     }
 }

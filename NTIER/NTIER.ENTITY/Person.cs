@@ -21,6 +21,10 @@ namespace NTIER.ENTITY
         public string Demographics { get; set; }
         public string rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
+        public override string ToString()
+        {
+            return $"{BusinessEntityID}--{FirstName}--{LastName}";
+        }
     }
 
 }

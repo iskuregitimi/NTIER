@@ -25,7 +25,10 @@ namespace NTIER.BLL
                 throw new Exception("Aynı isimle personel insert edilemez");
             }
 
-            BusinessEntity be = DataContext.InsertBusinessEntity();
+
+             //public static int userID;
+            
+        BusinessEntity be = DataContext.InsertBusinessEntity();
 
             person.BusinessEntityID = be.BusinessEntityID;
             DataContext.InsertPerson(person);
