@@ -1,4 +1,4 @@
-﻿CREATE PROC [Person].[usp_PersonInsert] 
+﻿ALTER PROC [Person].[usp_PersonInsert] 
     @BusinessEntityID int,
     @PersonType nchar(2),
     @NameStyle NameStyle,
@@ -7,15 +7,13 @@
     @MiddleName Name = NULL,
     @LastName Name,
     @Suffix nvarchar(10) = NULL,
-    @EmailPromotion int,
+    @EmailPromotion INT=0,
     @AdditionalContactInfo xml = NULL,
-    @Demographics xml = NULL,
-    @rowguid uniqueidentifier,
-    @ModifiedDate datetime
+    @Demographics xml = NULL
 AS 
 BEGIN
-	INSERT INTO [Person].[Person] ([BusinessEntityID], [PersonType], [NameStyle], [Title], [FirstName], [MiddleName], [LastName], [Suffix], [EmailPromotion], [AdditionalContactInfo], [Demographics], [rowguid], [ModifiedDate])
-	SELECT @BusinessEntityID, @PersonType, @NameStyle, @Title, @FirstName, @MiddleName, @LastName, @Suffix, @EmailPromotion, @AdditionalContactInfo, @Demographics, @rowguid, @ModifiedDate
+	INSERT INTO [Person].[Person] ([BusinessEntityID], [PersonType], [NameStyle], [Title], [FirstName], [MiddleName], [LastName], [Suffix], [EmailPromotion], [AdditionalContactInfo], [Demographics])
+	SELECT @BusinessEntityID, @PersonType, @NameStyle, @Title, @FirstName, @MiddleName, @LastName, @Suffix, @EmailPromotion, @AdditionalContactInfo, @Demographics
 	
 	-- Begin Return Select <- do not remove
 	SELECT [BusinessEntityID], [PersonType], [NameStyle], [Title], [FirstName], [MiddleName], [LastName], [Suffix], [EmailPromotion], [AdditionalContactInfo], [Demographics], [rowguid], [ModifiedDate]

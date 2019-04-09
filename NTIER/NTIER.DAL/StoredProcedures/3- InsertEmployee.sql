@@ -12,14 +12,12 @@ CREATE PROC [HumanResources].[usp_EmployeeInsert]
     @SalariedFlag Flag,
     @VacationHours smallint,
     @SickLeaveHours smallint,
-    @CurrentFlag Flag,
-    @rowguid uniqueidentifier,
-    @ModifiedDate datetime
+    @CurrentFlag Flag
 AS 
 BEGIN
 	
-	INSERT INTO [HumanResources].[Employee] ([BusinessEntityID], [NationalIDNumber], [LoginID], [OrganizationNode], [JobTitle], [BirthDate], [MaritalStatus], [Gender], [HireDate], [SalariedFlag], [VacationHours], [SickLeaveHours], [CurrentFlag], [rowguid], [ModifiedDate])
-	SELECT @BusinessEntityID, @NationalIDNumber, @LoginID, @OrganizationNode, @JobTitle, @BirthDate, @MaritalStatus, @Gender, @HireDate, @SalariedFlag, @VacationHours, @SickLeaveHours, @CurrentFlag, @rowguid, @ModifiedDate
+	INSERT INTO [HumanResources].[Employee] ([BusinessEntityID], [NationalIDNumber], [LoginID], [OrganizationNode], [JobTitle], [BirthDate], [MaritalStatus], [Gender], [HireDate], [SalariedFlag], [VacationHours], [SickLeaveHours], [CurrentFlag])
+	SELECT @BusinessEntityID, @NationalIDNumber, @LoginID, @OrganizationNode, @JobTitle, @BirthDate, @MaritalStatus, @Gender, @HireDate, @SalariedFlag, @VacationHours, @SickLeaveHours, @CurrentFlag
 	
 	-- Begin Return Select <- do not remove
 	SELECT [BusinessEntityID], [NationalIDNumber], [LoginID], [OrganizationNode], [OrganizationLevel], [JobTitle], [BirthDate], [MaritalStatus], [Gender], [HireDate], [SalariedFlag], [VacationHours], [SickLeaveHours], [CurrentFlag], [rowguid], [ModifiedDate]

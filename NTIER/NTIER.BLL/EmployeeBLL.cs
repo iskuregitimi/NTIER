@@ -12,8 +12,6 @@ namespace NTIER.BLL
     {
         public static void InsertEmployee(Person person, Employee employee)
         {
-            //TODO: Fluent Validation kütüphanesi
-
             int yas = DateTime.Now.Year - employee.BirthDate.Year;
 
             if (yas < 18)
@@ -21,6 +19,7 @@ namespace NTIER.BLL
                 throw new Exception("18 yaşından küçük personel insert edilemez");
             }
 
+            //DataContext.InsertEmployeeWithTransaction(employee, person);
 
             BusinessEntity be = DataContext.InsertBusinessEntity();
 

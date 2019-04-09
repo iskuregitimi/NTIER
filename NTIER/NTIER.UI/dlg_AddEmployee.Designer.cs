@@ -37,10 +37,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_JobTitle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_LoginId = new System.Windows.Forms.TextBox();
             this.dtp_BirthDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_Kaydet = new System.Windows.Forms.Button();
+            this.txt_nationalID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_firstName
@@ -112,20 +114,20 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(22, 134);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(56, 17);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.label5.Text = "LoginID";
             // 
-            // textBox5
+            // txt_LoginId
             // 
-            this.textBox5.Location = new System.Drawing.Point(127, 131);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(325, 22);
-            this.textBox5.TabIndex = 8;
+            this.txt_LoginId.Location = new System.Drawing.Point(127, 131);
+            this.txt_LoginId.Name = "txt_LoginId";
+            this.txt_LoginId.Size = new System.Drawing.Size(325, 22);
+            this.txt_LoginId.TabIndex = 8;
             // 
             // dtp_BirthDate
             // 
-            this.dtp_BirthDate.Location = new System.Drawing.Point(127, 159);
+            this.dtp_BirthDate.Location = new System.Drawing.Point(127, 186);
             this.dtp_BirthDate.Name = "dtp_BirthDate";
             this.dtp_BirthDate.Size = new System.Drawing.Size(200, 22);
             this.dtp_BirthDate.TabIndex = 10;
@@ -133,7 +135,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 159);
+            this.label6.Location = new System.Drawing.Point(22, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 17);
             this.label6.TabIndex = 9;
@@ -141,7 +143,7 @@
             // 
             // btn_Kaydet
             // 
-            this.btn_Kaydet.Location = new System.Drawing.Point(288, 208);
+            this.btn_Kaydet.Location = new System.Drawing.Point(288, 235);
             this.btn_Kaydet.Name = "btn_Kaydet";
             this.btn_Kaydet.Size = new System.Drawing.Size(164, 27);
             this.btn_Kaydet.TabIndex = 11;
@@ -149,16 +151,35 @@
             this.btn_Kaydet.UseVisualStyleBackColor = true;
             this.btn_Kaydet.Click += new System.EventHandler(this.btn_Kaydet_Click);
             // 
+            // txt_nationalID
+            // 
+            this.txt_nationalID.Location = new System.Drawing.Point(127, 158);
+            this.txt_nationalID.MaxLength = 6;
+            this.txt_nationalID.Name = "txt_nationalID";
+            this.txt_nationalID.Size = new System.Drawing.Size(325, 22);
+            this.txt_nationalID.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "National ID";
+            // 
             // dlg_AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 260);
+            this.ClientSize = new System.Drawing.Size(469, 309);
             this.Controls.Add(this.btn_Kaydet);
             this.Controls.Add(this.dtp_BirthDate);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txt_nationalID);
+            this.Controls.Add(this.txt_LoginId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_JobTitle);
             this.Controls.Add(this.label3);
@@ -185,9 +206,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_JobTitle;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_LoginId;
         private System.Windows.Forms.DateTimePicker dtp_BirthDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_Kaydet;
+        private System.Windows.Forms.TextBox txt_nationalID;
+        private System.Windows.Forms.Label label7;
     }
 }

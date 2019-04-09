@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,20 +22,34 @@ namespace NTIER.UI
 
         private void btn_Kaydet_Click(object sender, EventArgs e)
         {
-            Person person = new Person
+            try
             {
-                FirstName = txt_firstName.Text,
-                MiddleName = txt_MiddleName.Text,
-                LastName = txt_LastName.Text
-            };
+                Person person = new Person
+                {
+                    FirstName = txt_firstName.Text,
+                    MiddleName = txt_MiddleName.Text,
+                    LastName = txt_LastName.Text
+                };
 
-            Employee employee = new Employee
+                Employee employee = new Employee
+                {
+                    BirthDate = dtp_BirthDate.Value,
+                    JobTitle = txt_JobTitle.Text,
+                    LoginID = txt_LoginId.Text,
+                    NationalIDNumber = int.Parse(txt_nationalID.Text)
+                };
+
+
+                EmployeeBLL.InsertEmployee(person, employee);
+            }
+            catch (Exception ex)
             {
-                BirthDate = dtp_BirthDate.Value,
-                JobTitle = txt_JobTitle.Text
-            };
+                Debug.WriteLine("Hata alındı:" + ex.Message);
+                MessageBox.Show("Kayıt ekelemede hata" + ex.Message);
+            }
+            MessageBox.Show("Kayıt eklendi");
 
-            EmployeeBLL.InsertEmployee(person, employee);
+            this.Close();
         }
     }
 }
