@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.personelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniPersonelKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             // personelToolStripMenuItem
             // 
             this.personelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yeniPersonelKayıtToolStripMenuItem});
+            this.yeniPersonelKayıtToolStripMenuItem,
+            this.personelListesiToolStripMenuItem});
             this.personelToolStripMenuItem.Name = "personelToolStripMenuItem";
             this.personelToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.personelToolStripMenuItem.Text = "Personel";
@@ -56,9 +58,16 @@
             // yeniPersonelKayıtToolStripMenuItem
             // 
             this.yeniPersonelKayıtToolStripMenuItem.Name = "yeniPersonelKayıtToolStripMenuItem";
-            this.yeniPersonelKayıtToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.yeniPersonelKayıtToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.yeniPersonelKayıtToolStripMenuItem.Text = "Yeni Personel Kayıt";
             this.yeniPersonelKayıtToolStripMenuItem.Click += new System.EventHandler(this.yeniPersonelKayıtToolStripMenuItem_Click);
+            // 
+            // personelListesiToolStripMenuItem
+            // 
+            this.personelListesiToolStripMenuItem.Name = "personelListesiToolStripMenuItem";
+            this.personelListesiToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.personelListesiToolStripMenuItem.Text = "Personel Listesi";
+            this.personelListesiToolStripMenuItem.Click += new System.EventHandler(this.personelListesiToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -82,6 +91,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem personelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yeniPersonelKayıtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personelListesiToolStripMenuItem;
     }
 }
 

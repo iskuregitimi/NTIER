@@ -2,6 +2,7 @@
 using NTIER.ENTITY;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,29 @@ namespace NTIER.BLL
 
             employee.BusinessEntityID = be.BusinessEntityID;
             DataContext.InsertEmployee(employee);
+        }
+
+        public static void InsertEmployeeEmailBLL(int businessEntityId, string text)
+        {
+            if (businessEntityId <= 0)
+            {
+                throw new Exception("Lütfen personel seçiniz");
+            }
+            DataContext.InsertEmployeeEmail(businessEntityId, text);
+        }
+
+        public static DataTable SearchEmployeeBLL(string searchText)
+        {
+            // karakterler örnek olarak eklenmiştir.
+            if (searchText.Contains("--")
+                || searchText.Contains("**"))
+
+            {
+                throw new Exception("Yasaklı karakterler kullanmayınız");
+            }
+
+
+            return DataContext.SearchEmployee(searchText);
         }
     }
 }

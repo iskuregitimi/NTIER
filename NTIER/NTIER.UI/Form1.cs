@@ -23,5 +23,12 @@ namespace NTIER.UI
             dialog.MdiParent = this;
             dialog.Show();
         }
+
+        private void personelListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_PersonelListesi form = new frm_PersonelListesi();
+            form.MdiParent = this;            
+            form.Show();
+        }
     }
 }

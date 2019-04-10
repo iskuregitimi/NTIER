@@ -52,19 +52,37 @@
     <Compile Include="dlg_AddEmployee.Designer.cs">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlg_EmailEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlg_EmailEkle.Designer.cs">
+      <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_PersonelListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PersonelListesi.Designer.cs">
+      <DependentUpon>frm_PersonelListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="dlg_AddEmployee.resx">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dlg_EmailEkle.resx">
+      <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PersonelListesi.resx">
+      <DependentUpon>frm_PersonelListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

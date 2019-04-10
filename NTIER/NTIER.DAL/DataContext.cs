@@ -56,6 +56,21 @@ namespace NTIER.DAL
             }
 
         }
+
+        public static void InsertEmployeeEmail(int businessEntityId, string email)
+        {
+            SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_EMAIL]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", businessEntityId);
+            cmd.Parameters.AddWithValue("@EmailAddress", email);
+
+            Connection.Open();
+
+            cmd.ExecuteScalar();
+            
+            Connection.Close();
+        }
+
         public static BusinessEntity InsertBusinessEntity()
         {
             SqlCommand cmd = new SqlCommand("INSERT_BUSINESS_ENTITY", Connection);
@@ -139,12 +154,12 @@ namespace NTIER.DAL
 
             try
             {
-             ;
+                ;
                 if (Connection.State != ConnectionState.Open)
                 {
-                 
-                        Connection.Open();
-                  
+
+                    Connection.Open();
+
                 }
 
                 cmd.ExecuteNonQuery();
@@ -154,14 +169,32 @@ namespace NTIER.DAL
                 if (Connection.State == ConnectionState.Open)
                 {
 
-                  
-                        Connection.Close();
-                  
+
+                    Connection.Close();
+
                 }
 
                 throw;
             }
 
+        }
+
+        public static DataTable SearchEmployee(string searchText)
+        {
+            SqlCommand cmd = new SqlCommand("[dbo].[SELECT_EMPLOYEE_BY_NAME]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@SearchText", searchText);
+
+            Connection.Open();
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+
+            dr.Close();
+            Connection.Close();
+            return dt;
         }
 
     }
