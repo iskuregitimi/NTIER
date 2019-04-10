@@ -58,6 +58,12 @@
     <Compile Include="dlg_EmailEkle.Designer.cs">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlg_telefon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlg_telefon.Designer.cs">
+      <DependentUpon>dlg_telefon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlg_EmailEkle.resx">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlg_telefon.resx">
+      <DependentUpon>dlg_telefon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

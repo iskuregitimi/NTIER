@@ -1,5 +1,4 @@
-﻿using NTIER.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +10,18 @@ using System.Windows.Forms;
 
 namespace NTIER.UI
 {
-    public partial class dlg_EmailEkle : Form
+    public partial class dlg_telefon : Form
     {
+        public object EmployeeBll { get; private set; }
 
-        public int BusinessEntityId = 0;
-
-        public dlg_EmailEkle()
+        public dlg_telefon()
         {
             InitializeComponent();
+        }
+
+        private void dlg_telefon_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btn_Kaydet_Click(object sender, EventArgs e)
@@ -26,7 +29,8 @@ namespace NTIER.UI
 
             try
             {
-                EmployeeBLL.InsertEmployeeEmailBLL(BusinessEntityId, txt_Email.Text);
+                EmployeeBll.INSERT_EMPLOYEE_PHONE_NUMBERS(BussinesEntityID, txt_Tel);
+              
 
                 this.Close();
             }
@@ -35,16 +39,6 @@ namespace NTIER.UI
                 MessageBox.Show("Hata " + ex.ToString());
 
             }
-        }
-
-        private void dlg_EmailEkle_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Email_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

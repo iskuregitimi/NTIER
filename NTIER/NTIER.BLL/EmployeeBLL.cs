@@ -60,5 +60,14 @@ namespace NTIER.BLL
 
             return DataContext.SearchEmployee(searchText);
         }
+        public static void INSERT_EMPLOYEE_PHONE_NUMBERS(int businessEntityId, string text)
+        {
+            if (businessEntityId <= 0)
+            {
+                throw new Exception("Lütfen personel seçiniz");
+            }
+            DataContext.INSERT_EMPLOYEE_PHONE_NUMBERS(businessEntityId, text);
+
+        }
     }
 }

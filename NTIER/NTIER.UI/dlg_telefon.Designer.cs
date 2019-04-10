@@ -1,6 +1,6 @@
 ﻿namespace NTIER.UI
 {
-    partial class dlg_EmailEkle
+    partial class dlg_telefon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_Email = new System.Windows.Forms.TextBox();
             this.btn_Kaydet = new System.Windows.Forms.Button();
+            this.txt_Tel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txt_Email
-            // 
-            this.txt_Email.Location = new System.Drawing.Point(9, 10);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(354, 20);
-            this.txt_Email.TabIndex = 0;
-            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
             // 
             // btn_Kaydet
             // 
-            this.btn_Kaydet.Location = new System.Drawing.Point(252, 45);
-            this.btn_Kaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Kaydet.Location = new System.Drawing.Point(259, 71);
+            this.btn_Kaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Kaydet.Name = "btn_Kaydet";
             this.btn_Kaydet.Size = new System.Drawing.Size(106, 29);
-            this.btn_Kaydet.TabIndex = 1;
+            this.btn_Kaydet.TabIndex = 3;
             this.btn_Kaydet.Text = "Kaydet";
             this.btn_Kaydet.UseVisualStyleBackColor = true;
             this.btn_Kaydet.Click += new System.EventHandler(this.btn_Kaydet_Click);
             // 
-            // dlg_EmailEkle
+            // txt_Tel
+            // 
+            this.txt_Tel.Location = new System.Drawing.Point(11, 11);
+            this.txt_Tel.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Tel.Name = "txt_Tel";
+            this.txt_Tel.Size = new System.Drawing.Size(354, 20);
+            this.txt_Tel.TabIndex = 2;
+            // 
+            // dlg_telefon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 84);
+            this.ClientSize = new System.Drawing.Size(396, 134);
             this.Controls.Add(this.btn_Kaydet);
-            this.Controls.Add(this.txt_Email);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "dlg_EmailEkle";
-            this.Text = "dlg_EmailEkle";
-            this.Load += new System.EventHandler(this.dlg_EmailEkle_Load);
+            this.Controls.Add(this.txt_Tel);
+            this.Name = "dlg_telefon";
+            this.Text = "dlg_telefon";
+            this.Load += new System.EventHandler(this.dlg_telefon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Button btn_Kaydet;
+        private System.Windows.Forms.TextBox txt_Tel;
     }
 }

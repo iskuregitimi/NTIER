@@ -58,6 +58,7 @@
     <Content Include="StoredProcedures\4- SELECT_PERSON_BY _NAME.sql" />
     <Content Include="StoredProcedures\5- SELECT_EMPLOYE_BY_NAME.sql" />
     <Content Include="StoredProcedures\6- INSERT_EMPLOYEE_EMAIL.sql" />
+    <Content Include="StoredProcedures\7-INSERT_EMPLOYEE_PHONE_NUMBERS.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
