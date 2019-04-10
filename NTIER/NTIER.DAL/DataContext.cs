@@ -81,8 +81,6 @@ namespace NTIER.DAL
 
             return entity;
         }
-
-
         public static void InsertPerson(Person person)
         {
 
@@ -165,8 +163,6 @@ namespace NTIER.DAL
             }
 
         }
-
-
 
     }
 }
