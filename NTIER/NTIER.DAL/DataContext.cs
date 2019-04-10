@@ -197,5 +197,20 @@ namespace NTIER.DAL
             return dt;
         }
 
+        public static void InsertEmployeeINSERT_EMPLOYEE_PHONE_NUMBERS(int businessEntityId, string tel)
+        {
+            SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_PHONE_NUMBERS]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", businessEntityId);
+            cmd.Parameters.AddWithValue("@PhoneNumber", tel);
+
+            Connection.Open();
+
+            cmd.ExecuteScalar();
+
+            Connection.Close();
+        }
+
+
     }
 }
