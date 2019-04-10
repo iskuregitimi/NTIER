@@ -38,6 +38,17 @@ namespace NTIER.BLL
             DataContext.InsertEmployee(employee);
         }
 
+       
+
+        public static void InsertEmployeePhoneBLL(int businessEntityId, string text)
+        {
+            if (businessEntityId <= 0)
+            {
+                throw new Exception("Lütfen personel seçiniz");
+            }
+            DataContext.InsertEmployeePhone(businessEntityId, text);
+        }
+
         public static void InsertEmployeeEmailBLL(int businessEntityId, string text)
         {
             if (businessEntityId <= 0)

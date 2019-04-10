@@ -71,6 +71,20 @@ namespace NTIER.DAL
             Connection.Close();
         }
 
+        public static void InsertEmployeePhone(int businessEntityId, string phone)
+        {
+            SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_PHONE]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", businessEntityId);
+            cmd.Parameters.AddWithValue("@PhoneNumber", phone);
+
+            Connection.Open();
+
+            cmd.ExecuteScalar();
+
+            Connection.Close();
+        }
+
         public static BusinessEntity InsertBusinessEntity()
         {
             SqlCommand cmd = new SqlCommand("INSERT_BUSINESS_ENTITY", Connection);
@@ -168,10 +182,7 @@ namespace NTIER.DAL
             {
                 if (Connection.State == ConnectionState.Open)
                 {
-
-
                     Connection.Close();
-
                 }
 
                 throw;
