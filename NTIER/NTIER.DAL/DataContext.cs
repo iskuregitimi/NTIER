@@ -278,7 +278,6 @@ namespace NTIER.DAL
             cmd.Parameters.AddWithValue("@BussinessEntityID", searchText);
 
             Connection.Open();
-
             
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
