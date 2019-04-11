@@ -265,17 +265,17 @@ namespace NTIER.DAL
             Connection.Close();
         }
 
-        public static DataSet GetPersonDetail(int BusinessEntityID)
+        public static DataSet GetPersonDetail(int businessEntityId)
         {
             SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAILS", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@BussinessEntityID", BusinessEntityID);
+            cmd.Parameters.AddWithValue("@BussinessEntityID", businessEntityId);
 
             Connection.Open();
 
 
-            SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            
             DataSet ds = new DataSet();
             da.Fill(ds);
 

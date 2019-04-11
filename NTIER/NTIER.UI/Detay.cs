@@ -1,4 +1,5 @@
 ﻿using NTIER.BLL;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace NTIER.UI
 {
     public partial class Detay : Form
     {
+        internal int businessEntityId;
+
         public Detay()
         {
             InitializeComponent();
@@ -20,7 +23,6 @@ namespace NTIER.UI
 
         public int BusinessEntityID;
 
-    
         private void Detay_Load(object sender, EventArgs e)
         {
             DataSet ds = EmployeeBLL.GetDetailsBLL(BusinessEntityID);
