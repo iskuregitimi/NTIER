@@ -19,13 +19,13 @@ namespace NTIER.UI
             InitializeComponent();
         }
 
-        public int BusinessEntityId = 0;
+        public int BusinessEntityID;
 
         private void dlg_PersonelDetay_Load(object sender, EventArgs e)
         {
-            DataSet ds = EmployeeBLL.SelectEmployeeDetails(BusinessEntityId);
+            DataSet ds = EmployeeBLL.SelectEmployeeDetails(BusinessEntityID);
 
-            lbl_Id.Text = BusinessEntityId.ToString();
+            lbl_Id.Text = BusinessEntityID.ToString();
 
             //lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
             //lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
