@@ -83,9 +83,9 @@ namespace NTIER.BLL
 
             return DataContext.SearchEmployee(searchText);
         }
-        public static DataSet GetDetailsBLL(int businessEntityId)
+        public static DataSet GetDetailsBLL(int BusinessEntityID)
         {
-            DataSet ds = DataContext.GetPersonDetail(businessEntityId);
+            DataSet ds = DataContext.GetPersonDetail(BusinessEntityID);
             return ds;
 
         }

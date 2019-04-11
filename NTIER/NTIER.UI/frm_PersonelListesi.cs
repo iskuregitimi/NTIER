@@ -54,7 +54,7 @@ namespace NTIER.UI
         private void detayToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Detay form = new Detay();
-            form.BusinessEntityId = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
+            form.BusinessEntityID = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
             form.ShowDialog();
         }
     }

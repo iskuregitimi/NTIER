@@ -20,8 +20,7 @@ namespace NTIER.UI
 
         public int BusinessEntityID;
 
-        public int BusinessEntityId;
-
+    
         private void Detay_Load(object sender, EventArgs e)
         {
             DataSet ds = EmployeeBLL.GetDetailsBLL(BusinessEntityID);
