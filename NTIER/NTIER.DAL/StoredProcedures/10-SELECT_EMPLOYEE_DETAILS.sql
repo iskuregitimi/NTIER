@@ -1,28 +1,16 @@
-﻿
-CREATE Proc SELECT_EMPLOYEE_DETAILS
-@BusinessEntityID INT
+﻿alter proc SELECT_EMPLOYEE_DETAILS
+@BussinessEntityID int 
 
-AS
-BEGIN
-	SELECT pp.BusinessEntityID,pp.FirstName,pp.LastName,he.JobTitle,he.BirthDate,he.HireDate
-	FROM Person.Person pp
-	INNER JOIN HumanResources.Employee he
-	ON pp.BusinessEntityID=he.BusinessEntityID
-	WHERE @BusinessEntityID=pp.BusinessEntityID
-	
-	SELECT pb.BusinessEntityID,pa.AddressID,pa.AddressLine1,pa.City,pa.PostalCode
-	FROM Person.Address pa
-	Inner Join Person.BusinessEntityAddress pb
-	ON pa.AddressID = pb.AddressID
-	WHERE @BusinessEntityID=pb.BusinessEntityID
+as
+begin 
+select e.JobTitle, e.HireDate,p.FirstName,p.LastName,e.BirthDate from [Person].[Person] p
+ join [HumanResources].[Employee]  e on  p.BusinessEntityID=e.BusinessEntityID
+where p.BusinessEntityID=@BussinessEntityID
 
+select * from [Person].[PersonPhone] where BusinessEntityID=@BussinessEntityID
 
-	SELECT BusinessEntityID,PhoneNumber 
-	FROM Person.PersonPhone pp
-	WHERE @BusinessEntityID=pp.BusinessEntityID
+select bea.AddressID,a.AddressLine1,a.AddressLine2 from [Person].[BusinessEntityAddress] bea join [Person].[Address] a on a.AddressID=bea.AddressID
+where bea.BusinessEntityID=@BussinessEntityID
 
-	SELECT BusinessEntityID,EmailAddress 
-	FROM Person.EmailAddress
-	WHERE @BusinessEntityID=BusinessEntityID
-
-END
+select * from [Person].[EmailAddress] where BusinessEntityID=@BussinessEntityID
+end 
