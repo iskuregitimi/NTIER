@@ -76,6 +76,12 @@
     <Compile Include="frm_PersonelListesi.Designer.cs">
       <DependentUpon>frm_PersonelListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonDetails_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonDetails_form.Designer.cs">
+      <DependentUpon>PersonDetails_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="dlg_AddEmployee.resx">
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_PersonelListesi.resx">
       <DependentUpon>frm_PersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonDetails_form.resx">
+      <DependentUpon>PersonDetails_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
