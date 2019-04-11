@@ -57,6 +57,42 @@ namespace NTIER.DAL
 
         }
 
+        public static void InsertEmployeeAddress(int businessEntityId, Address adres)
+        {
+            //Adress insert et ve son insert edilen adresin ID sini al
+            int addressId = InsertAddress(adres);
+
+            //BusinessEntityAdres tablosuna kayıt ekle.
+            SqlCommand cmd = new SqlCommand("INSERT_BUSINESS_ENTITY_ADDRESS", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", businessEntityId);
+            cmd.Parameters.AddWithValue("@AddressID", addressId);
+
+            Connection.Open();
+            cmd.ExecuteNonQuery();
+            Connection.Close();
+        }
+
+        private static int InsertAddress(Address adres)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT_ADDRESS", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@AddressLine1", adres.AddressLine1);
+            cmd.Parameters.AddWithValue("@AddressLine2", adres.AddressLine2);
+            cmd.Parameters.AddWithValue("@City", adres.City);
+            cmd.Parameters.AddWithValue("@StateProvinceID", adres.StateProvinceID);
+            cmd.Parameters.AddWithValue("@PostalCode", adres.PostalCode);
+
+            int AddressId = 0;
+
+            Connection.Open();
+            AddressId = (int)cmd.ExecuteScalar();
+
+            Connection.Close();
+
+            return AddressId;
+        }
+
         public static void InsertEmployeeEmail(int businessEntityId, string email)
         {
             SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_EMAIL]", Connection);
@@ -67,8 +103,26 @@ namespace NTIER.DAL
             Connection.Open();
 
             cmd.ExecuteScalar();
-            
+
             Connection.Close();
+        }
+
+        public static DataTable GetStateProvinces(string searchText)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT_STATEPROVINCES", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@searchText", searchText);
+
+            Connection.Open();
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+
+            dr.Close();
+            Connection.Close();
+            return dt;
         }
 
         public static BusinessEntity InsertBusinessEntity()
