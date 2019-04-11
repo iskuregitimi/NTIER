@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detay.Designer.cs">
+      <DependentUpon>Detay.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlg_AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Detay.resx">
+      <DependentUpon>Detay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dlg_AddEmployee.resx">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
     </EmbeddedResource>

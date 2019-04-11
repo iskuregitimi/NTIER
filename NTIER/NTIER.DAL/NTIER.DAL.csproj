@@ -47,6 +47,7 @@
     <Content Include="StoredProcedures\8- INSERT_ADDRESS.sql" />
     <Content Include="StoredProcedures\7- SELECT_STATEPROVINCES.sql" />
     <Content Include="StoredProcedures\9- INSERT_BUSINESS_ENTITY_ADDRESS.sql" />
+    <Content Include="StoredProcedures\10-SELECT_EMPLOYEE_DETAILS.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NTIER.ENTITY\NTIER.ENTITY.csproj">

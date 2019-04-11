@@ -39,6 +39,11 @@ namespace NTIER.BLL
             DataContext.InsertEmployee(employee);
         }
 
+        public static DataSet GetDetailsBLL(object businessEntityID)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void InsertEmployeeAdressBLL(int businessEntityId, Address adres)
         {
             if (AddressValidator.Validate(adres) == true)
@@ -78,5 +83,12 @@ namespace NTIER.BLL
 
             return DataContext.SearchEmployee(searchText);
         }
+        public static DataSet GetDetailsBLL(int businessEntityId)
+        {
+            DataSet ds = DataContext.GetPersonDetail(businessEntityId);
+            return ds;
+
+        }
+
     }
 }

@@ -32,8 +32,9 @@
             this.dgv_PersonelListesi = new System.Windows.Forms.DataGridView();
             this.cms_Personel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.emailEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_SearchBox = new System.Windows.Forms.TextBox();
             this.adresEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_SearchBox = new System.Windows.Forms.TextBox();
+            this.detayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelListesi)).BeginInit();
             this.cms_Personel.SuspendLayout();
             this.SuspendLayout();
@@ -63,9 +64,10 @@
             this.cms_Personel.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cms_Personel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.emailEkleToolStripMenuItem,
-            this.adresEkleToolStripMenuItem});
+            this.adresEkleToolStripMenuItem,
+            this.detayToolStripMenuItem});
             this.cms_Personel.Name = "cms_Personel";
-            this.cms_Personel.Size = new System.Drawing.Size(211, 80);
+            this.cms_Personel.Size = new System.Drawing.Size(211, 104);
             // 
             // emailEkleToolStripMenuItem
             // 
@@ -73,6 +75,13 @@
             this.emailEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.emailEkleToolStripMenuItem.Text = "Email Ekle";
             this.emailEkleToolStripMenuItem.Click += new System.EventHandler(this.emailEkleToolStripMenuItem_Click);
+            // 
+            // adresEkleToolStripMenuItem
+            // 
+            this.adresEkleToolStripMenuItem.Name = "adresEkleToolStripMenuItem";
+            this.adresEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.adresEkleToolStripMenuItem.Text = "Adres Ekle";
+            this.adresEkleToolStripMenuItem.Click += new System.EventHandler(this.adresEkleToolStripMenuItem_Click);
             // 
             // txt_SearchBox
             // 
@@ -84,12 +93,12 @@
             this.txt_SearchBox.TabIndex = 1;
             this.txt_SearchBox.TextChanged += new System.EventHandler(this.txt_SearchBox_TextChanged);
             // 
-            // adresEkleToolStripMenuItem
+            // detayToolStripMenuItem
             // 
-            this.adresEkleToolStripMenuItem.Name = "adresEkleToolStripMenuItem";
-            this.adresEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.adresEkleToolStripMenuItem.Text = "Adres Ekle";
-            this.adresEkleToolStripMenuItem.Click += new System.EventHandler(this.adresEkleToolStripMenuItem_Click);
+            this.detayToolStripMenuItem.Name = "detayToolStripMenuItem";
+            this.detayToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.detayToolStripMenuItem.Text = "Detay";
+            this.detayToolStripMenuItem.Click += new System.EventHandler(this.detayToolStripMenuItem_Click);
             // 
             // frm_PersonelListesi
             // 
@@ -115,5 +124,6 @@
         private System.Windows.Forms.ContextMenuStrip cms_Personel;
         private System.Windows.Forms.ToolStripMenuItem emailEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adresEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detayToolStripMenuItem;
     }
 }

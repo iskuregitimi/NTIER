@@ -1,5 +1,4 @@
-﻿
-CREATE PROC [HumanResources].[usp_EmployeeInsert] 
+﻿CREATE PROC [HumanResources].[usp_EmployeeInsert] 
     @BusinessEntityID int,
     @NationalIDNumber nvarchar(15),
     @LoginID nvarchar(256),
