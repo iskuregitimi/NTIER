@@ -71,6 +71,20 @@ namespace NTIER.DAL
             Connection.Close();
         }
 
+        public static void InsertEmployeePhone(int businessEntityId, string telefon)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT_PHONE", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", businessEntityId);
+            cmd.Parameters.AddWithValue("@PhoneNumber", telefon);
+
+            Connection.Open();
+
+            cmd.ExecuteScalar();
+
+            Connection.Close();
+        }
+
         public static BusinessEntity InsertBusinessEntity()
         {
             SqlCommand cmd = new SqlCommand("INSERT_BUSINESS_ENTITY", Connection);
@@ -96,6 +110,7 @@ namespace NTIER.DAL
 
             return entity;
         }
+
         public static void InsertPerson(Person person)
         {
 
@@ -197,5 +212,22 @@ namespace NTIER.DAL
             return dt;
         }
 
+        public static DataSet SelectEmployeeDetails(int id)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAILS", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", id);
+
+            Connection.Open();
+
+            SqlDataAdapter adap = new SqlDataAdapter(cmd);
+           
+            DataSet ds = new DataSet();
+            adap.Fill(ds);
+            
+            Connection.Close();
+
+            return ds;
+        }
     }
 }

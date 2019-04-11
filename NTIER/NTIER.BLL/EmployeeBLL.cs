@@ -47,6 +47,15 @@ namespace NTIER.BLL
             DataContext.InsertEmployeeEmail(businessEntityId, text);
         }
 
+        public static void InsertEmployeePhoneBLL(int businessEntityId, string text)
+        {
+            if (businessEntityId <= 0)
+            {
+                throw new Exception("Lütfen personel seçiniz");
+            }
+            DataContext.InsertEmployeePhone(businessEntityId, text);
+        }
+
         public static DataTable SearchEmployeeBLL(string searchText)
         {
             // karakterler örnek olarak eklenmiştir.
@@ -59,6 +68,14 @@ namespace NTIER.BLL
 
 
             return DataContext.SearchEmployee(searchText);
+        }
+
+        public static DataSet SelectEmployeeDetails(int id)
+        {
+
+            DataSet ds = new DataSet();
+
+            return ds = DataContext.SelectEmployeeDetails(id);
         }
     }
 }

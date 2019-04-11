@@ -1,4 +1,4 @@
-﻿ALTER PROC [Person].[usp_PersonInsert] 
+﻿Create PROC [Person].[usp_PersonInsert] 
     @BusinessEntityID int,
     @PersonType nchar(2),
     @NameStyle NameStyle,

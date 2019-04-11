@@ -58,6 +58,18 @@
     <Compile Include="dlg_EmailEkle.Designer.cs">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlg_PersonelDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlg_PersonelDetay.Designer.cs">
+      <DependentUpon>dlg_PersonelDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlg_TelefonEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlg_TelefonEkle.Designer.cs">
+      <DependentUpon>dlg_TelefonEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlg_EmailEkle.resx">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlg_PersonelDetay.resx">
+      <DependentUpon>dlg_PersonelDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlg_TelefonEkle.resx">
+      <DependentUpon>dlg_TelefonEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
