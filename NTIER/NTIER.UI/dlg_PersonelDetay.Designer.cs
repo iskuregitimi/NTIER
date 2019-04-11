@@ -37,16 +37,18 @@
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_Surname = new System.Windows.Forms.Label();
             this.lbl_BirthDate = new System.Windows.Forms.Label();
+            this.dgv_PersonelBilgileri = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Adres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Email)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelBilgileri)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Adres
             // 
             this.dgv_Adres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Adres.Location = new System.Drawing.Point(82, 103);
-            this.dgv_Adres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Adres.Location = new System.Drawing.Point(78, 260);
+            this.dgv_Adres.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Adres.Name = "dgv_Adres";
             this.dgv_Adres.Size = new System.Drawing.Size(785, 118);
             this.dgv_Adres.TabIndex = 1;
@@ -54,8 +56,8 @@
             // dgv_Tel
             // 
             this.dgv_Tel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Tel.Location = new System.Drawing.Point(82, 252);
-            this.dgv_Tel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Tel.Location = new System.Drawing.Point(78, 409);
+            this.dgv_Tel.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Tel.Name = "dgv_Tel";
             this.dgv_Tel.Size = new System.Drawing.Size(785, 118);
             this.dgv_Tel.TabIndex = 3;
@@ -63,8 +65,8 @@
             // dgv_Email
             // 
             this.dgv_Email.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Email.Location = new System.Drawing.Point(82, 393);
-            this.dgv_Email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Email.Location = new System.Drawing.Point(78, 550);
+            this.dgv_Email.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Email.Name = "dgv_Email";
             this.dgv_Email.Size = new System.Drawing.Size(785, 113);
             this.dgv_Email.TabIndex = 2;
@@ -123,11 +125,21 @@
             this.lbl_BirthDate.TabIndex = 9;
             this.lbl_BirthDate.Text = "label6";
             // 
+            // dgv_PersonelBilgileri
+            // 
+            this.dgv_PersonelBilgileri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_PersonelBilgileri.Location = new System.Drawing.Point(78, 112);
+            this.dgv_PersonelBilgileri.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_PersonelBilgileri.Name = "dgv_PersonelBilgileri";
+            this.dgv_PersonelBilgileri.Size = new System.Drawing.Size(785, 118);
+            this.dgv_PersonelBilgileri.TabIndex = 10;
+            // 
             // dlg_PersonelDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 558);
+            this.ClientSize = new System.Drawing.Size(956, 699);
+            this.Controls.Add(this.dgv_PersonelBilgileri);
             this.Controls.Add(this.lbl_BirthDate);
             this.Controls.Add(this.lbl_Surname);
             this.Controls.Add(this.lbl_Name);
@@ -137,13 +149,14 @@
             this.Controls.Add(this.dgv_Tel);
             this.Controls.Add(this.dgv_Email);
             this.Controls.Add(this.dgv_Adres);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dlg_PersonelDetay";
             this.Text = "Detaylar";
             this.Load += new System.EventHandler(this.dlg_PersonelDetay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Adres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Email)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelBilgileri)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +172,6 @@
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Label lbl_Surname;
         private System.Windows.Forms.Label lbl_BirthDate;
+        private System.Windows.Forms.DataGridView dgv_PersonelBilgileri;
     }
 }

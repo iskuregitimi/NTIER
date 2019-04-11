@@ -27,11 +27,14 @@ namespace NTIER.UI
 
             lbl_Id.Text = BusinessEntityId.ToString();
 
-            lbl_JobTitle.Text = ds.Tables[0].Rows[0].ToString();
-            lbl_HireDate.Text = ds.Tables[0].Rows[1].ToString();
-            lbl_Name.Text = ds.Tables[0].Rows[2].ToString();
-            lbl_Surname.Text = ds.Tables[0].Rows[3].ToString();
-            lbl_BirthDate.Text = ds.Tables[0].Rows[4].ToString();
+            //lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
+            //lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
+            //lbl_Name.Text = ds.Tables[0].Rows[0][3].ToString();
+            //lbl_Surname.Text = ds.Tables[0].Rows[0][4].ToString();
+            //lbl_BirthDate.Text = ds.Tables[0].Rows[0][5].ToString();
+
+            dgv_PersonelBilgileri.DataSource = null;
+            dgv_PersonelBilgileri.DataSource = ds.Tables[0];
 
             dgv_Adres.DataSource = null;
             dgv_Adres.DataSource = ds.Tables[1];

@@ -273,10 +273,10 @@ namespace NTIER.DAL
 
             Connection.Open();
 
-            SqlDataAdapter adap = new SqlDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             DataSet ds = new DataSet();
-            adap.Fill(ds);
+            da.Fill(ds);
 
             Connection.Close();
 
