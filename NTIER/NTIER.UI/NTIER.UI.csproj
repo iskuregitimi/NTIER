@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detaylar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detaylar.Designer.cs">
+      <DependentUpon>Detaylar.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlg_AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Detaylar.resx">
+      <DependentUpon>Detaylar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dlg_AddEmployee.resx">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +128,10 @@
     <ProjectReference Include="..\NTIER.BLL\NTIER.BLL.csproj">
       <Project>{b54068e9-de9e-499b-abe3-75180ff77776}</Project>
       <Name>NTIER.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTIER.DAL\NTIER.DAL.csproj">
+      <Project>{0B56C88C-1D14-4700-B159-485B07C63A72}</Project>
+      <Name>NTIER.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\NTIER.ENTITY\NTIER.ENTITY.csproj">
       <Project>{46d9d98a-a23b-4ec2-9f31-e848a0e029ce}</Project>

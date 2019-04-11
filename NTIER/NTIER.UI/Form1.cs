@@ -30,5 +30,10 @@ namespace NTIER.UI
             form.MdiParent = this;            
             form.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
