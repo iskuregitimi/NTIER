@@ -50,5 +50,12 @@ namespace NTIER.UI
             form.BusinessEntityId = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
             form.ShowDialog();
         }
+        public static int BENİD { get; set; }
+        private void kişiDetayıGörüntüleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BENİD = (int)(dgv_PersonelListesi.CurrentRow.Cells[0].Value);
+            Employee_İnformation frm = new Employee_İnformation();
+            frm.Show();
+        }
     }
 }

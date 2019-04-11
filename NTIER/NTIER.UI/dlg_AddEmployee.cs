@@ -54,5 +54,10 @@ namespace NTIER.UI
 
             this.Close();
         }
+
+        private void dlg_AddEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

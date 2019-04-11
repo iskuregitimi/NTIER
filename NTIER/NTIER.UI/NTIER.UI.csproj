@@ -64,6 +64,12 @@
     <Compile Include="dlg_EmailEkle.Designer.cs">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee_İnformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_İnformation.Designer.cs">
+      <DependentUpon>Employee_İnformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlg_EmailEkle.resx">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_İnformation.resx">
+      <DependentUpon>Employee_İnformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -119,6 +128,10 @@
     <ProjectReference Include="..\NTIER.BLL\NTIER.BLL.csproj">
       <Project>{b54068e9-de9e-499b-abe3-75180ff77776}</Project>
       <Name>NTIER.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTIER.DAL\NTIER.DAL.csproj">
+      <Project>{0B56C88C-1D14-4700-B159-485B07C63A72}</Project>
+      <Name>NTIER.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\NTIER.ENTITY\NTIER.ENTITY.csproj">
       <Project>{46d9d98a-a23b-4ec2-9f31-e848a0e029ce}</Project>

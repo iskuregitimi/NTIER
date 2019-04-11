@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace NTIER.DAL
 {
     public static class DataContext
@@ -263,6 +265,20 @@ namespace NTIER.DAL
             cmd.ExecuteScalar();
 
             Connection.Close();
+        }
+
+        public static DataSet Employee_İnfromations(int BEİD)
+        {
+            SqlCommand cmd = new SqlCommand("Select_Employee_Details", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", BEİD);
+            Connection.Open();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            DataSet dt = new DataSet();
+            adp.Fill(dt);
+            Connection.Close();
+            return dt;
+ 
         }
 
 
