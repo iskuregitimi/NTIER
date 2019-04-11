@@ -50,9 +50,7 @@ namespace NTIER.BLL
                 throw new Exception("Lütfen adres verilerini kontrol ediniz");
             }
         }
-
-       
-
+        
         public static void InsertEmployeePhoneBLL(int businessEntityId, string text)
         {
             if (businessEntityId <= 0)
@@ -88,6 +86,13 @@ namespace NTIER.BLL
 
 
             return DataContext.SearchEmployee(searchText);
+        }
+
+        public static DataSet GetDetailsBLL(int businessEntityId)
+        {
+            DataSet ds = DataContext.GetDetails(businessEntityId);
+            return ds;
+            
         }
     }
 }

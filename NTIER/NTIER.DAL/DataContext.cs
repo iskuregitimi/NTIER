@@ -20,8 +20,7 @@ namespace NTIER.DAL
 
             Connection = new SqlConnection(connectionString);
         }
-
-
+        
         public static bool IsEmployeeExists(Person person)
         {
             SqlCommand cmd = new SqlCommand("SELEC_PERSON_BY_NAME", Connection);
@@ -276,6 +275,20 @@ namespace NTIER.DAL
             Connection.Close();
         }
 
+        public static DataSet GetDetails(int businessEntityId)
+        {
+            SqlCommand cmd = new SqlCommand("[dbo].[SELECT_EMPLOYEE_DETAILS]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", businessEntityId);
 
+            Connection.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+
+            Connection.Close();
+            return ds;
+        }
     }
 }

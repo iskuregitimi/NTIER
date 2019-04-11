@@ -32,9 +32,10 @@
             this.dgv_PersonelListesi = new System.Windows.Forms.DataGridView();
             this.cms_Personel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.emailEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_SearchBox = new System.Windows.Forms.TextBox();
             this.adresEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.telefonEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_SearchBox = new System.Windows.Forms.TextBox();
+            this.personelDetayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelListesi)).BeginInit();
             this.cms_Personel.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.dgv_PersonelListesi.ContextMenuStrip = this.cms_Personel;
             this.dgv_PersonelListesi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_PersonelListesi.Location = new System.Drawing.Point(9, 32);
-            this.dgv_PersonelListesi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_PersonelListesi.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_PersonelListesi.MultiSelect = false;
             this.dgv_PersonelListesi.Name = "dgv_PersonelListesi";
             this.dgv_PersonelListesi.RowTemplate.Height = 24;
@@ -65,33 +66,23 @@
             this.cms_Personel.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cms_Personel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.emailEkleToolStripMenuItem,
-            this.adresEkleToolStripMenuItem});
-            this.telefonEkleToolStripMenuItem});
+            this.adresEkleToolStripMenuItem,
+            this.telefonEkleToolStripMenuItem,
+            this.personelDetayToolStripMenuItem});
             this.cms_Personel.Name = "cms_Personel";
-            this.cms_Personel.Size = new System.Drawing.Size(211, 80);
+            this.cms_Personel.Size = new System.Drawing.Size(181, 114);
             // 
             // emailEkleToolStripMenuItem
             // 
             this.emailEkleToolStripMenuItem.Name = "emailEkleToolStripMenuItem";
-            this.emailEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.emailEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.emailEkleToolStripMenuItem.Text = "Email Ekle";
             this.emailEkleToolStripMenuItem.Click += new System.EventHandler(this.emailEkleToolStripMenuItem_Click);
-            // 
-            // txt_SearchBox
-            // 
-            this.txt_SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_SearchBox.Location = new System.Drawing.Point(9, 10);
-            this.txt_SearchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_SearchBox.Name = "txt_SearchBox";
-            this.txt_SearchBox.Size = new System.Drawing.Size(583, 20);
-            this.txt_SearchBox.TabIndex = 1;
-            this.txt_SearchBox.TextChanged += new System.EventHandler(this.txt_SearchBox_TextChanged);
             // 
             // adresEkleToolStripMenuItem
             // 
             this.adresEkleToolStripMenuItem.Name = "adresEkleToolStripMenuItem";
-            this.adresEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.adresEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.adresEkleToolStripMenuItem.Text = "Adres Ekle";
             this.adresEkleToolStripMenuItem.Click += new System.EventHandler(this.adresEkleToolStripMenuItem_Click);
             // 
@@ -102,6 +93,24 @@
             this.telefonEkleToolStripMenuItem.Text = "Telefon Ekle";
             this.telefonEkleToolStripMenuItem.Click += new System.EventHandler(this.telefonEkleToolStripMenuItem_Click);
             // 
+            // txt_SearchBox
+            // 
+            this.txt_SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_SearchBox.Location = new System.Drawing.Point(9, 10);
+            this.txt_SearchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_SearchBox.Name = "txt_SearchBox";
+            this.txt_SearchBox.Size = new System.Drawing.Size(583, 20);
+            this.txt_SearchBox.TabIndex = 1;
+            this.txt_SearchBox.TextChanged += new System.EventHandler(this.txt_SearchBox_TextChanged);
+            // 
+            // personelDetayToolStripMenuItem
+            // 
+            this.personelDetayToolStripMenuItem.Name = "personelDetayToolStripMenuItem";
+            this.personelDetayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.personelDetayToolStripMenuItem.Text = "Personel Detay";
+            this.personelDetayToolStripMenuItem.Click += new System.EventHandler(this.personelDetayToolStripMenuItem_Click);
+            // 
             // frm_PersonelListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +118,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.txt_SearchBox);
             this.Controls.Add(this.dgv_PersonelListesi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_PersonelListesi";
             this.Text = "frm_PersonelListesi";
             this.Load += new System.EventHandler(this.frm_PersonelListesi_Load);
@@ -128,5 +137,6 @@
         private System.Windows.Forms.ToolStripMenuItem emailEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adresEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem telefonEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personelDetayToolStripMenuItem;
     }
 }
