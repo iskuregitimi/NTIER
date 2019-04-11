@@ -55,6 +55,9 @@
     <Content Include="StoredProcedures\1- INSERT_BUSINESS_ENTITY.sql" />
     <Content Include="StoredProcedures\2- InsertPerson.sql" />
     <Content Include="StoredProcedures\3- InsertEmployee.sql" />
+    <Content Include="StoredProcedures\4- SELECT_PERSON_BY _NAME.sql" />
+    <Content Include="StoredProcedures\5- SELECT_EMPLOYE_BY_NAME.sql" />
+    <Content Include="StoredProcedures\6- INSERT_EMPLOYEE_EMAIL.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

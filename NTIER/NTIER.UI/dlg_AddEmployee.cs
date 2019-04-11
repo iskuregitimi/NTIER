@@ -41,13 +41,16 @@ namespace NTIER.UI
 
 
                 EmployeeBLL.InsertEmployee(person, employee);
+
+                MessageBox.Show("Kayıt eklendi");
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Hata alındı:" + ex.Message);
                 MessageBox.Show("Kayıt ekelemede hata" + ex.Message);
             }
-            MessageBox.Show("Kayıt eklendi");
+          
 
             this.Close();
         }
