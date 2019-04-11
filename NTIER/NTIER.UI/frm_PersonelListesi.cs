@@ -54,7 +54,7 @@ namespace NTIER.UI
         private void detaylarıGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Detaylar frm = new Detaylar();
+            dlg_PersonelDetay frm = new dlg_PersonelDetay();
             frm.Show();
 
         }

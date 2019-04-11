@@ -78,5 +78,13 @@ namespace NTIER.BLL
 
             return DataContext.SearchEmployee(searchText);
         }
+
+        public static DataSet SelectEmployeeDetails(int id)
+        {
+
+            DataSet ds = new DataSet();
+
+            return ds = DataContext.SelectEmployeeDetails(id);
+        }
     }
 }

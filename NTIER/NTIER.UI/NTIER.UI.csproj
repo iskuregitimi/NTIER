@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Detaylar.cs">
+    <Compile Include="dlg_PersonelDetay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Detaylar.Designer.cs">
-      <DependentUpon>Detaylar.cs</DependentUpon>
+    <Compile Include="dlg_PersonelDetay.Designer.cs">
+      <DependentUpon>dlg_PersonelDetay.cs</DependentUpon>
     </Compile>
     <Compile Include="dlg_AddEmployee.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Detaylar.resx">
-      <DependentUpon>Detaylar.cs</DependentUpon>
+    <EmbeddedResource Include="dlg_PersonelDetay.resx">
+      <DependentUpon>dlg_PersonelDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlg_AddEmployee.resx">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
