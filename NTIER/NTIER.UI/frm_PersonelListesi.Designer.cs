@@ -33,6 +33,7 @@
             this.cms_Personel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.emailEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_SearchBox = new System.Windows.Forms.TextBox();
+            this.adresEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelListesi)).BeginInit();
             this.cms_Personel.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +62,15 @@
             // 
             this.cms_Personel.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cms_Personel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emailEkleToolStripMenuItem});
+            this.emailEkleToolStripMenuItem,
+            this.adresEkleToolStripMenuItem});
             this.cms_Personel.Name = "cms_Personel";
-            this.cms_Personel.Size = new System.Drawing.Size(147, 28);
+            this.cms_Personel.Size = new System.Drawing.Size(211, 80);
             // 
             // emailEkleToolStripMenuItem
             // 
             this.emailEkleToolStripMenuItem.Name = "emailEkleToolStripMenuItem";
-            this.emailEkleToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.emailEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.emailEkleToolStripMenuItem.Text = "Email Ekle";
             this.emailEkleToolStripMenuItem.Click += new System.EventHandler(this.emailEkleToolStripMenuItem_Click);
             // 
@@ -81,6 +83,13 @@
             this.txt_SearchBox.Size = new System.Drawing.Size(776, 22);
             this.txt_SearchBox.TabIndex = 1;
             this.txt_SearchBox.TextChanged += new System.EventHandler(this.txt_SearchBox_TextChanged);
+            // 
+            // adresEkleToolStripMenuItem
+            // 
+            this.adresEkleToolStripMenuItem.Name = "adresEkleToolStripMenuItem";
+            this.adresEkleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.adresEkleToolStripMenuItem.Text = "Adres Ekle";
+            this.adresEkleToolStripMenuItem.Click += new System.EventHandler(this.adresEkleToolStripMenuItem_Click);
             // 
             // frm_PersonelListesi
             // 
@@ -105,5 +114,6 @@
         private System.Windows.Forms.TextBox txt_SearchBox;
         private System.Windows.Forms.ContextMenuStrip cms_Personel;
         private System.Windows.Forms.ToolStripMenuItem emailEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adresEkleToolStripMenuItem;
     }
 }

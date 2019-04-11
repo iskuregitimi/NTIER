@@ -43,5 +43,12 @@ namespace NTIER.UI
             form.BusinessEntityId = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
             form.ShowDialog();
         }
+
+        private void adresEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dlg_AdressEkle form = new dlg_AdressEkle();
+            form.BusinessEntityId = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
+            form.ShowDialog();
+        }
     }
 }
