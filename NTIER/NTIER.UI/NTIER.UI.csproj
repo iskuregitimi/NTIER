@@ -52,6 +52,12 @@
     <Compile Include="dlg_AddEmployee.Designer.cs">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlg_adresekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlg_adresekle.Designer.cs">
+      <DependentUpon>dlg_adresekle.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlg_EmailEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="dlg_AddEmployee.resx">
       <DependentUpon>dlg_AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlg_adresekle.resx">
+      <DependentUpon>dlg_adresekle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlg_EmailEkle.resx">
       <DependentUpon>dlg_EmailEkle.cs</DependentUpon>

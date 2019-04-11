@@ -42,9 +42,11 @@
             this.personelToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // personelToolStripMenuItem
             // 
@@ -52,33 +54,35 @@
             this.yeniPersonelKayıtToolStripMenuItem,
             this.personelListesiToolStripMenuItem});
             this.personelToolStripMenuItem.Name = "personelToolStripMenuItem";
-            this.personelToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.personelToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.personelToolStripMenuItem.Text = "Personel";
             // 
             // yeniPersonelKayıtToolStripMenuItem
             // 
             this.yeniPersonelKayıtToolStripMenuItem.Name = "yeniPersonelKayıtToolStripMenuItem";
-            this.yeniPersonelKayıtToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.yeniPersonelKayıtToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.yeniPersonelKayıtToolStripMenuItem.Text = "Yeni Personel Kayıt";
             this.yeniPersonelKayıtToolStripMenuItem.Click += new System.EventHandler(this.yeniPersonelKayıtToolStripMenuItem_Click);
             // 
             // personelListesiToolStripMenuItem
             // 
             this.personelListesiToolStripMenuItem.Name = "personelListesiToolStripMenuItem";
-            this.personelListesiToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.personelListesiToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.personelListesiToolStripMenuItem.Text = "Personel Listesi";
             this.personelListesiToolStripMenuItem.Click += new System.EventHandler(this.personelListesiToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

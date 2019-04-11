@@ -43,5 +43,31 @@ namespace NTIER.UI
             form.BusinessEntityId = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
             form.ShowDialog();
         }
+
+        private void dgv_PersonelListesi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void telefonEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dlg_telefon form2=new dlg_telefon();
+            form2.BusinessEntityId = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
+            form2.ShowDialog();
+
+
+        }
+
+        private void cms_Personel_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void adresEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dlg_adresekle frm = new dlg_adresekle();
+
+            frm.Show();
+        }
     }
 }

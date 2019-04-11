@@ -50,6 +50,7 @@
             this.txt_Tel.Name = "txt_Tel";
             this.txt_Tel.Size = new System.Drawing.Size(354, 20);
             this.txt_Tel.TabIndex = 2;
+            this.txt_Tel.TextChanged += new System.EventHandler(this.txt_Tel_TextChanged);
             // 
             // dlg_telefon
             // 

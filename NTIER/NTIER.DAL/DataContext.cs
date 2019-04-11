@@ -67,7 +67,7 @@ namespace NTIER.DAL
             Connection.Open();
 
             cmd.ExecuteScalar();
-            
+
             Connection.Close();
         }
 
@@ -85,7 +85,7 @@ namespace NTIER.DAL
             while (dr.Read())
             {
                 entity.BusinessEntityID = (int)dr["BusinessEntityID"];
-                entity.ModifiedDate = DateTime.Parse(dr["ModifiedDate"].ToString());
+                entity.ModifiedDate  = DateTime.Parse(dr["ModifiedDate"].ToString());
             }
 
             dr.Close();
@@ -197,7 +197,7 @@ namespace NTIER.DAL
             return dt;
         }
 
-        public static void InsertEmployeeINSERT_EMPLOYEE_PHONE_NUMBERS(int businessEntityId, string tel)
+        public static void INSERT_EMPLOYEE_PHONE_NUMBERS(int businessEntityId, string tel)
         {
             SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_PHONE_NUMBERS]", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -205,12 +205,69 @@ namespace NTIER.DAL
             cmd.Parameters.AddWithValue("@PhoneNumber", tel);
 
             Connection.Open();
-
             cmd.ExecuteScalar();
-
             Connection.Close();
         }
+        public static Adress InsertEmployeeAdres()
+        {
+            SqlCommand cmd = new SqlCommand("Insert_Adress", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
 
+
+            Connection.Open();
+
+
+            SqlDataReader dr = cmd.ExecuteReader();
+          Adress personadres  = new Adress();
+            while (dr.Read())
+            {
+                personadres.AddressID= (int)dr["AddressID"];
+                personadres.AddressLine1 = (string)dr["AddressLine1"];
+                    personadres.ModifiedDate = DateTime.Parse(dr["ModifiedDate"].ToString());
+            }
+
+            dr.Close();
+
+
+            Connection.Close();
+
+
+            return personadres;
+        }
+        //public static void InsertADRES(AdresEntity adresEnti)
+        //{
+
+        //    SqlCommand cmd = new SqlCommand(" Adres_Enti", Connection);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@BusinessEntityID", adresEnti.BusinessEntityID);
+        //    cmd.Parameters.AddWithValue("@AdresID", adresEnti.AddressID);
+
+
+
+        //    try
+        //    {
+
+
+        //        if (Connection.State != ConnectionState.Open)
+        //        {
+
+        //            Connection.Open();
+
+        //        }
+
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        if (Connection.State == ConnectionState.Open)
+        //        {
+        //            Connection.Close();
+        //        }
+
+        //        throw;
+        //    }
+
+        }
 
     }
-}
+

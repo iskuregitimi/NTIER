@@ -38,6 +38,17 @@ namespace NTIER.BLL
             DataContext.InsertEmployee(employee);
         }
 
+       
+        //public static void InsertADRES(AdresEntity adresEnti)
+        //{
+                     
+        //    Adress ad = DataContext.InsertEmployeeAdres();
+        //    adresEnti.AddressID = ad.AddressID;
+        //    DataContext.InsertADRES(adresEnti);
+
+
+        //}
+
         public static void InsertEmployeeEmailBLL(int businessEntityId, string text)
         {
             if (businessEntityId <= 0)
@@ -60,7 +71,7 @@ namespace NTIER.BLL
 
             return DataContext.SearchEmployee(searchText);
         }
-        public static void INSERT_EMPLOYEE_PHONE_NUMBERS(int businessEntityId, string text)
+        public static void INSERT_EMPLOYEE_PHONE_NUMBERSBLL(int businessEntityId, string text)
         {
             if (businessEntityId <= 0)
             {

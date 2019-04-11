@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NTIER.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace NTIER.UI
 {
     public partial class dlg_telefon : Form
     {
-        public object EmployeeBll { get; private set; }
+        //public object EmployeeBll { get; private set; }
 
         public dlg_telefon()
         {
@@ -24,12 +25,14 @@ namespace NTIER.UI
 
         }
 
+        public int BusinessEntityId = 0;
         private void btn_Kaydet_Click(object sender, EventArgs e)
         {
 
             try
             {
-                EmployeeBll.INSERT_EMPLOYEE_PHONE_NUMBERS(BussinesEntityID, txt_Tel);
+                EmployeeBLL.INSERT_EMPLOYEE_PHONE_NUMBERSBLL(BusinessEntityId, txt_Tel.Text);
+                    //INSERT_EMPLOYEE_PHONE_NUMBERS(BussinesEntityID, txt_Tel);
               
 
                 this.Close();
@@ -39,6 +42,11 @@ namespace NTIER.UI
                 MessageBox.Show("Hata " + ex.ToString());
 
             }
+        }
+
+        private void txt_Tel_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
