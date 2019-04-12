@@ -283,7 +283,7 @@ namespace NTIER.DAL
 
         public static DataSet SelectEmployeeDetails(int BusinessEntityID)
         {
-            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAILS", Connection);
+            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAIL", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
 
@@ -300,7 +300,7 @@ namespace NTIER.DAL
 		{
 			SqlCommand cmd = new SqlCommand("Delete_Email",Connection);
 			cmd.CommandType = CommandType.StoredProcedure;
-			cmd.Parameters.AddWithValue("@EmailAdressID", EmailAdressID);
+			cmd.Parameters.AddWithValue("@EmailAdressID",EmailAdressID);
 			Connection.Open();
 			cmd.ExecuteNonQuery();
 

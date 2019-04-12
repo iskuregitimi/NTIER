@@ -116,7 +116,7 @@
             this.dgv_Email.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Email.Size = new System.Drawing.Size(785, 113);
             this.dgv_Email.TabIndex = 2;
-            this.dgv_Email.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Email_CellContentClick);
+
             // 
             // lbl_Id
             // 

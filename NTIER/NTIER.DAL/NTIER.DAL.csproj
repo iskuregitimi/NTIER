@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="StoredProcedures\10-SELECT_EMPLOYEE_DETAILS.sql" />
+    <Content Include="StoredProcedures\10-SELECT_EMPLOYEE_DETAIL.sql" />
     <Content Include="StoredProcedures\12- UPDATE_EMPLOYEE.sql" />
     <Content Include="StoredProcedures\8- INSERT_ADDRESS.sql" />
     <Content Include="StoredProcedures\7- SELECT_STATEPROVINCES.sql" />

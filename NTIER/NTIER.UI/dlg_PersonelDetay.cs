@@ -22,11 +22,13 @@ namespace NTIER.UI
             InitializeComponent();
         }
 
-        public int BusinessEntityID = 0;
-        public int EmailAdressId = 0;
+        public int BusinessEntityID;
+
+        public int EmailAdressId;
 
         private void dlg_PersonelDetay_Load(object sender, EventArgs e)
         {
+            dgv_Email.ClearSelection();
             DataSet ds = EmployeeBLL.SelectEmployeeDetails(BusinessEntityID);
 
             lbl_Id.Text = BusinessEntityID.ToString();
@@ -44,16 +46,16 @@ namespace NTIER.UI
 
             dgv_Adres.DataSource = null;
             dgv_Adres.DataSource = ds.Tables[1];
+            dgv_Adres.ClearSelection();
 
             dgv_Tel.DataSource = null;
             dgv_Tel.DataSource = ds.Tables[2];
+            dgv_Tel.ClearSelection();
 
             dgv_Email.DataSource = null;
             dgv_Email.DataSource = ds.Tables[3];
+            dgv_Email.ClearSelection();
 
-
-            dgv_Email.Columns["EmailAddressID"].Visible = false;
-            dgv_Email.Columns["rowguid"].Visible = false;
 
         }
 
@@ -62,20 +64,19 @@ namespace NTIER.UI
 
         }
 
-        private void dgv_Email_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
             if (dgv_Email.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Lütfen email seçiniz.");
                 return;
             }
 
-            EmailAdressId = int.Parse(dgv_Email.SelectedRows[0].Cells[1].Value.ToString());
+           EmailAdressId = int.Parse(dgv_Email.SelectedRows[0].Cells[1].Value.ToString());
             EmployeeBLL.EmailSil_BLL(EmailAdressId);
             MessageBox.Show("Email adresi Silindi");
 
