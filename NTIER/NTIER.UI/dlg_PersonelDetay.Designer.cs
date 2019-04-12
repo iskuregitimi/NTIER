@@ -30,6 +30,9 @@
         {
 			this.components = new System.ComponentModel.Container();
 			this.dgv_Adres = new System.Windows.Forms.DataGridView();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dgv_Tel = new System.Windows.Forms.DataGridView();
 			this.dgv_Email = new System.Windows.Forms.DataGridView();
 			this.lbl_Id = new System.Windows.Forms.Label();
@@ -39,14 +42,11 @@
 			this.lbl_Surname = new System.Windows.Forms.Label();
 			this.dgv_PersonelBilgileri = new System.Windows.Forms.DataGridView();
 			this.lbl_BirthDate = new System.Windows.Forms.Label();
-			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Adres)).BeginInit();
+			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Email)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelBilgileri)).BeginInit();
-			this.contextMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dgv_Adres
@@ -57,6 +57,28 @@
 			this.dgv_Adres.Name = "dgv_Adres";
 			this.dgv_Adres.Size = new System.Drawing.Size(589, 96);
 			this.dgv_Adres.TabIndex = 1;
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem,
+            this.güncelleToolStripMenuItem});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+			// 
+			// silToolStripMenuItem
+			// 
+			this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+			this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.silToolStripMenuItem.Text = "Sil";
+			this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+			// 
+			// güncelleToolStripMenuItem
+			// 
+			this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+			this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.güncelleToolStripMenuItem.Text = "Güncelle";
 			// 
 			// dgv_Tel
 			// 
@@ -146,28 +168,6 @@
 			this.lbl_BirthDate.TabIndex = 9;
 			this.lbl_BirthDate.Text = "label6";
 			// 
-			// contextMenuStrip1
-			// 
-			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.silToolStripMenuItem,
-            this.güncelleToolStripMenuItem});
-			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
-			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-			// 
-			// silToolStripMenuItem
-			// 
-			this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-			this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.silToolStripMenuItem.Text = "Sil";
-			this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-			// 
-			// güncelleToolStripMenuItem
-			// 
-			this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-			this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-			this.güncelleToolStripMenuItem.Text = "Güncelle";
-			// 
 			// dlg_PersonelDetay
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,10 +187,10 @@
 			this.Text = "Detaylar";
 			this.Load += new System.EventHandler(this.dlg_PersonelDetay_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Adres)).EndInit();
+			this.contextMenuStrip1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_Email)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelBilgileri)).EndInit();
-			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
