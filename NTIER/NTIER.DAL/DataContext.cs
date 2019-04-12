@@ -271,13 +271,13 @@ namespace NTIER.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
 
-            Connection.Open();
-
+            //Connection.Open();
+            //dataadapter kullanırken connection open close yapmamıza gerek yok
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
 
-            Connection.Close();
+            //Connection.Close();
 
             return ds;
         }

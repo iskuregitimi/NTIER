@@ -14,6 +14,8 @@ namespace NTIER.UI
 {
     public partial class dlg_PersonelDetay : Form
     {
+     
+
         public dlg_PersonelDetay()
         {
             InitializeComponent();
@@ -25,12 +27,14 @@ namespace NTIER.UI
            
             DataSet ds = EmployeeBLL.SelectEmployeeDetails(frm_PersonelListesi.BusinessEntityID);
 
-            //lbl_Id.Text = BusinessEntityID.ToString();        
-            //lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
-            //lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
-            //lbl_Name.Text = ds.Tables[0].Rows[0][3].ToString();
-            //lbl_Surname.Text = ds.Tables[0].Rows[0][4].ToString();
-            //lbl_BirthDate.Text = ds.Tables[0].Rows[0][5].ToString();
+            //lbl_Id.Text = BusinessEntityID.ToString();  
+            //rowlarda 0. nın 1. si diyerek yada kolonun ismiyle çağırabiliriz!!!!!
+
+            //lbl_JobTitle.Text = ds.Tables[0].Rows[0]["JobTitle"].ToString();
+            //lbl_HireDate.Text = ds.Tables[0].Rows[0]["HireDate"].ToString();
+            //lbl_Name.Text = ds.Tables[0].Rows[0]["FirstName"].ToString();
+            //lbl_Surname.Text = ds.Tables[0].Rows[0]["LastName"].ToString();
+            //lbl_BirthDate.Text = ds.Tables[0].Rows[0]["BirstDate"].ToString();
 
             dgv_PersonelBilgileri.DataSource = null;
             dgv_PersonelBilgileri.DataSource = ds.Tables[0];

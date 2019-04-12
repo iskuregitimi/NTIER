@@ -77,6 +77,9 @@
             // 
             // dgv_PersonelBilgileri
             // 
+            this.dgv_PersonelBilgileri.AllowUserToAddRows = false;
+            this.dgv_PersonelBilgileri.AllowUserToDeleteRows = false;
+            this.dgv_PersonelBilgileri.AllowUserToOrderColumns = true;
             this.dgv_PersonelBilgileri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_PersonelBilgileri.Location = new System.Drawing.Point(78, 112);
             this.dgv_PersonelBilgileri.Margin = new System.Windows.Forms.Padding(4);
