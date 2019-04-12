@@ -93,6 +93,21 @@ namespace NTIER.DAL
             return AddressId;
         }
 
+        public static void UpdateEmployee(Employee selectedEmployee)
+        {
+            SqlCommand cmd = new SqlCommand("[dbo].[UPDATE_EMPLOYEE]", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@BusinessEntityID", selectedEmployee.BusinessEntityID);
+            cmd.Parameters.AddWithValue("@JobTitle", selectedEmployee.JobTitle);
+            cmd.Parameters.AddWithValue("@HireDate", selectedEmployee.HireDate);
+
+            Connection.Open();
+
+            cmd.ExecuteScalar();
+
+            Connection.Close();
+        }
+
         public static void InsertEmployeeEmail(int businessEntityId, string email)
         {
             SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_EMAIL]", Connection);

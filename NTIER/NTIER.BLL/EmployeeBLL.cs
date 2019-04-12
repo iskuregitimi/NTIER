@@ -94,5 +94,14 @@ namespace NTIER.BLL
 
 		}
 
-	}
+        public static void UpdateEmployeBLL(Employee selectedEmployee)
+        {
+            if (selectedEmployee.BusinessEntityID==0)
+            {
+                throw new Exception("personel seçilmemiş");
+            }
+
+            DataContext.UpdateEmployee(selectedEmployee);
+        }
+    }
 }

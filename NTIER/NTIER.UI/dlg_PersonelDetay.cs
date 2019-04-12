@@ -1,5 +1,6 @@
 ﻿using NTIER.BLL;
 using NTIER.DAL;
+using NTIER.ENTITY;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace NTIER.UI
 {
     public partial class dlg_PersonelDetay : Form
     {
+        Employee selectedEmployee = new Employee();
+
         public dlg_PersonelDetay()
         {
             InitializeComponent();
@@ -28,14 +31,16 @@ namespace NTIER.UI
 
             lbl_Id.Text = BusinessEntityID.ToString();
 
-            //lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
-            //lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
-            //lbl_Name.Text = ds.Tables[0].Rows[0][3].ToString();
-            //lbl_Surname.Text = ds.Tables[0].Rows[0][4].ToString();
 
+            lbl_HireDate.Text = ds.Tables[0].Rows[0]["HireDate"].ToString();
+            lbl_Name.Text = ds.Tables[0].Rows[0]["FirstName"].ToString();
+            lbl_Surname.Text = ds.Tables[0].Rows[0]["LastName"].ToString();
+            txt_JobTitle.Text = ds.Tables[0].Rows[0]["JobTitle"].ToString();
 
-            dgv_PersonelBilgileri.DataSource = null;
-            dgv_PersonelBilgileri.DataSource = ds.Tables[0];
+            selectedEmployee.BusinessEntityID = BusinessEntityID;
+            selectedEmployee.HireDate = DateTime.Parse(ds.Tables[0].Rows[0]["HireDate"].ToString());
+            selectedEmployee.JobTitle = ds.Tables[0].Rows[0]["JobTitle"].ToString();
+
 
             dgv_Adres.DataSource = null;
             dgv_Adres.DataSource = ds.Tables[1];
@@ -78,6 +83,28 @@ namespace NTIER.UI
 
             dgv_Email.Rows.Remove(dgv_Email.SelectedRows[0]);
             dgv_Email.Refresh();
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                selectedEmployee.JobTitle = txt_JobTitle.Text;
+
+                //ekrana komponent eklememek için böyle yapıldı
+                selectedEmployee.HireDate = selectedEmployee.HireDate.AddYears(-1);
+
+
+                EmployeeBLL.UpdateEmployeBLL(selectedEmployee);
+
+                MessageBox.Show("Personel güncellendi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata : " + ex.ToString());
+            }
+
         }
     }
 }

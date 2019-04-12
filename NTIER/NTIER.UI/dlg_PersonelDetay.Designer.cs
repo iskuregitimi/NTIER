@@ -36,17 +36,16 @@
             this.dgv_Tel = new System.Windows.Forms.DataGridView();
             this.dgv_Email = new System.Windows.Forms.DataGridView();
             this.lbl_Id = new System.Windows.Forms.Label();
-            this.lbl_JobTitle = new System.Windows.Forms.Label();
             this.lbl_HireDate = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_Surname = new System.Windows.Forms.Label();
-            this.dgv_PersonelBilgileri = new System.Windows.Forms.DataGridView();
             this.lbl_BirthDate = new System.Windows.Forms.Label();
+            this.txt_JobTitle = new System.Windows.Forms.TextBox();
+            this.btn_Update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Adres)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Email)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelBilgileri)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Adres
@@ -58,7 +57,7 @@
             this.dgv_Adres.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Adres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Adres.Location = new System.Drawing.Point(77, 260);
-            this.dgv_Adres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Adres.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Adres.Name = "dgv_Adres";
             this.dgv_Adres.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Adres.Size = new System.Drawing.Size(785, 118);
@@ -96,7 +95,7 @@
             this.dgv_Tel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Tel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Tel.Location = new System.Drawing.Point(77, 409);
-            this.dgv_Tel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Tel.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Tel.Name = "dgv_Tel";
             this.dgv_Tel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Tel.Size = new System.Drawing.Size(785, 118);
@@ -112,7 +111,7 @@
             this.dgv_Email.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Email.ContextMenuStrip = this.contextMenuStrip1;
             this.dgv_Email.Location = new System.Drawing.Point(77, 550);
-            this.dgv_Email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Email.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Email.Name = "dgv_Email";
             this.dgv_Email.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Email.Size = new System.Drawing.Size(785, 113);
@@ -122,25 +121,16 @@
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(116, 55);
+            this.lbl_Id.Location = new System.Drawing.Point(77, 55);
             this.lbl_Id.Name = "lbl_Id";
-            this.lbl_Id.Size = new System.Drawing.Size(46, 17);
+            this.lbl_Id.Size = new System.Drawing.Size(41, 17);
             this.lbl_Id.TabIndex = 4;
-            this.lbl_Id.Text = "label1";
-            // 
-            // lbl_JobTitle
-            // 
-            this.lbl_JobTitle.AutoSize = true;
-            this.lbl_JobTitle.Location = new System.Drawing.Point(240, 55);
-            this.lbl_JobTitle.Name = "lbl_JobTitle";
-            this.lbl_JobTitle.Size = new System.Drawing.Size(46, 17);
-            this.lbl_JobTitle.TabIndex = 5;
-            this.lbl_JobTitle.Text = "label2";
+            this.lbl_Id.Text = "lbl_Id";
             // 
             // lbl_HireDate
             // 
             this.lbl_HireDate.AutoSize = true;
-            this.lbl_HireDate.Location = new System.Drawing.Point(368, 55);
+            this.lbl_HireDate.Location = new System.Drawing.Point(77, 139);
             this.lbl_HireDate.Name = "lbl_HireDate";
             this.lbl_HireDate.Size = new System.Drawing.Size(46, 17);
             this.lbl_HireDate.TabIndex = 6;
@@ -149,7 +139,7 @@
             // lbl_Name
             // 
             this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(483, 55);
+            this.lbl_Name.Location = new System.Drawing.Point(77, 83);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(46, 17);
             this.lbl_Name.TabIndex = 7;
@@ -158,52 +148,54 @@
             // lbl_Surname
             // 
             this.lbl_Surname.AutoSize = true;
-            this.lbl_Surname.Location = new System.Drawing.Point(603, 55);
+            this.lbl_Surname.Location = new System.Drawing.Point(77, 111);
             this.lbl_Surname.Name = "lbl_Surname";
             this.lbl_Surname.Size = new System.Drawing.Size(46, 17);
             this.lbl_Surname.TabIndex = 8;
             this.lbl_Surname.Text = "label5";
             // 
-            // dgv_PersonelBilgileri
-            // 
-            this.dgv_PersonelBilgileri.AllowUserToAddRows = false;
-            this.dgv_PersonelBilgileri.AllowUserToDeleteRows = false;
-            this.dgv_PersonelBilgileri.AllowUserToOrderColumns = true;
-            this.dgv_PersonelBilgileri.AllowUserToResizeRows = false;
-            this.dgv_PersonelBilgileri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_PersonelBilgileri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_PersonelBilgileri.Location = new System.Drawing.Point(77, 112);
-            this.dgv_PersonelBilgileri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgv_PersonelBilgileri.Name = "dgv_PersonelBilgileri";
-            this.dgv_PersonelBilgileri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_PersonelBilgileri.Size = new System.Drawing.Size(785, 118);
-            this.dgv_PersonelBilgileri.TabIndex = 10;
-            // 
             // lbl_BirthDate
             // 
             this.lbl_BirthDate.AutoSize = true;
-            this.lbl_BirthDate.Location = new System.Drawing.Point(748, 55);
+            this.lbl_BirthDate.Location = new System.Drawing.Point(77, 167);
             this.lbl_BirthDate.Name = "lbl_BirthDate";
             this.lbl_BirthDate.Size = new System.Drawing.Size(46, 17);
             this.lbl_BirthDate.TabIndex = 9;
             this.lbl_BirthDate.Text = "label6";
+            // 
+            // txt_JobTitle
+            // 
+            this.txt_JobTitle.Location = new System.Drawing.Point(77, 195);
+            this.txt_JobTitle.Name = "txt_JobTitle";
+            this.txt_JobTitle.Size = new System.Drawing.Size(337, 22);
+            this.txt_JobTitle.TabIndex = 11;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(325, 230);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(89, 23);
+            this.btn_Update.TabIndex = 12;
+            this.btn_Update.Text = "Kaydet";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // dlg_PersonelDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 699);
-            this.Controls.Add(this.dgv_PersonelBilgileri);
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.txt_JobTitle);
             this.Controls.Add(this.lbl_BirthDate);
             this.Controls.Add(this.lbl_Surname);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.lbl_HireDate);
-            this.Controls.Add(this.lbl_JobTitle);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.dgv_Tel);
             this.Controls.Add(this.dgv_Email);
             this.Controls.Add(this.dgv_Adres);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dlg_PersonelDetay";
             this.Text = "Detaylar";
             this.Load += new System.EventHandler(this.dlg_PersonelDetay_Load);
@@ -211,7 +203,6 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Email)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelBilgileri)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,14 +213,14 @@
         private System.Windows.Forms.DataGridView dgv_Tel;
         private System.Windows.Forms.DataGridView dgv_Email;
         private System.Windows.Forms.Label lbl_Id;
-        private System.Windows.Forms.Label lbl_JobTitle;
         private System.Windows.Forms.Label lbl_HireDate;
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Label lbl_Surname;
-        private System.Windows.Forms.DataGridView dgv_PersonelBilgileri;
 		private System.Windows.Forms.Label lbl_BirthDate;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
-	}
+        private System.Windows.Forms.TextBox txt_JobTitle;
+        private System.Windows.Forms.Button btn_Update;
+    }
 }
