@@ -240,6 +240,7 @@ namespace NTIER.DAL
             cmd.Parameters.AddWithValue("@SearchText", searchText);
 
             Connection.Open();
+            
 
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -271,14 +272,9 @@ namespace NTIER.DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
 
-            Connection.Open();
-
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-
             DataSet ds = new DataSet();
             da.Fill(ds);
-
-            Connection.Close();
 
             return ds;
         }
