@@ -1,4 +1,4 @@
-﻿CREATE PROC INSERT_EMPLOYEE_EMAIL
+﻿alter PROC INSERT_EMPLOYEE_EMAIL
     @BusinessEntityID int,
     @EmailAddress nvarchar(50)
 AS 
