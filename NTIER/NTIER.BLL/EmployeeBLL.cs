@@ -103,5 +103,17 @@ namespace NTIER.BLL
 
             DataContext.UpdateEmployee(selectedEmployee);
         }
+
+
+        public static EFW.Employee GetEmployee(int BusinessEntityID)
+        {
+            EFW.AdventureWorksEntities efDataContext= new EFW.AdventureWorksEntities();
+            EFW.Employee emp = efDataContext.Employees.Where(e => e.BusinessEntityID == BusinessEntityID).FirstOrDefault();
+
+            return emp;
+
+              
+
+        }
     }
 }
