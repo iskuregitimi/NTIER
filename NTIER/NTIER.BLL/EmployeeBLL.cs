@@ -82,10 +82,15 @@ namespace NTIER.BLL
         }
         public static DataSet GetDetailsBLL(int businessEntityId)
         {
-            DataSet ds = DataContext.GetPersonDetail(businessEntityId);
-            return ds;
-
+           return DataContext.GetPersonDetail(businessEntityId);
+           
         }
+      
+        public static void DELETE_ADRESSBLL(int addressID)
+        {
+            DataContext.DELETE_ADRESS(addressID);
+        }
+
 
     }
 }

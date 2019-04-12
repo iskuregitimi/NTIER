@@ -93,6 +93,7 @@ namespace NTIER.DAL
             return AddressId;
         }
 
+       
         public static void InsertEmployeeEmail(int businessEntityId, string email)
         {
             SqlCommand cmd = new SqlCommand("[dbo].[INSERT_EMPLOYEE_EMAIL]", Connection);
@@ -267,9 +268,9 @@ namespace NTIER.DAL
 
         public static DataSet GetPersonDetail(int businessEntityId)
         {
-            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAILS", Connection);
+            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAIL", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@BussinessEntityID", businessEntityId);
+            cmd.Parameters.AddWithValue("@BusinessEntityID",businessEntityId);
 
             Connection.Open();
 
@@ -283,5 +284,25 @@ namespace NTIER.DAL
             Connection.Close();
             return ds;
         }
+
+
+        public static void DELETE_ADRESS(int addressID)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE_ADRESS", Connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue(" @AddressID", addressID);
+            
+
+    
+            Connection.Open();
+
+            cmd.ExecuteNonQuery();
+        
+            Connection.Close();
+
+        }
+
     }
+
+
 }

@@ -32,5 +32,29 @@ namespace NTIER.UI
             dataGridView4.DataSource = ds.Tables[3];
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            int addressID = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value.ToString());
+            EmployeeBLL.DELETE_ADRESSBLL(addressID);
+            MessageBox.Show("Test");
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

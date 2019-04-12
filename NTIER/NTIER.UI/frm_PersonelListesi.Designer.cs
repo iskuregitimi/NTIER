@@ -33,8 +33,8 @@
             this.cms_Personel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.emailEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adresEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_SearchBox = new System.Windows.Forms.TextBox();
             this.detayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_SearchBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PersonelListesi)).BeginInit();
             this.cms_Personel.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,7 @@
             this.detayToolStripMenuItem});
             this.cms_Personel.Name = "cms_Personel";
             this.cms_Personel.Size = new System.Drawing.Size(211, 104);
+            this.cms_Personel.Opening += new System.ComponentModel.CancelEventHandler(this.cms_Personel_Opening);
             // 
             // emailEkleToolStripMenuItem
             // 
@@ -83,6 +84,13 @@
             this.adresEkleToolStripMenuItem.Text = "Adres Ekle";
             this.adresEkleToolStripMenuItem.Click += new System.EventHandler(this.adresEkleToolStripMenuItem_Click);
             // 
+            // detayToolStripMenuItem
+            // 
+            this.detayToolStripMenuItem.Name = "detayToolStripMenuItem";
+            this.detayToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.detayToolStripMenuItem.Text = "Detay";
+            this.detayToolStripMenuItem.Click += new System.EventHandler(this.detayToolStripMenuItem_Click);
+            // 
             // txt_SearchBox
             // 
             this.txt_SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -92,13 +100,6 @@
             this.txt_SearchBox.Size = new System.Drawing.Size(776, 22);
             this.txt_SearchBox.TabIndex = 1;
             this.txt_SearchBox.TextChanged += new System.EventHandler(this.txt_SearchBox_TextChanged);
-            // 
-            // detayToolStripMenuItem
-            // 
-            this.detayToolStripMenuItem.Name = "detayToolStripMenuItem";
-            this.detayToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.detayToolStripMenuItem.Text = "Detay";
-            this.detayToolStripMenuItem.Click += new System.EventHandler(this.detayToolStripMenuItem_Click);
             // 
             // frm_PersonelListesi
             // 

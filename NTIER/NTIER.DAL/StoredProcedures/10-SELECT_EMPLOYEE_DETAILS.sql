@@ -1,34 +1,31 @@
-﻿ALTER PROC SELECT_EMPLOYEE_DETAILS
-	@BusinessEntityID INT
-
--- SELECT_EMPLOYEE_DETAILS 1
+﻿
+Create PROC [dbo].[SELECT_EMPLOYEE_DETAIL]
+    @BusinessEntityID int
 AS
 BEGIN
---TELEFON BİLGİLERİ
-    SELECT TOP 1 FirstName AS 'ADI',MiddleName AS 'Ortanca Adı',LastName AS 'Soyadı',pp.PhoneNumber AS 'Telefon Numarası',pnt.Name AS 'Çağrı Tipi' FROM Person.Person p
-	INNER JOIN Person.PersonPhone pp ON pp.BusinessEntityID = p.BusinessEntityID
-	INNER JOIN Person.PhoneNumberType pnt ON pnt.PhoneNumberTypeID=pp.PhoneNumberTypeID
-	WHERE p.BusinessEntityID=@BusinessEntityID
-
---ADRES Detayları
-    SELECT TOP 1 FirstName AS 'ADI',MiddleName AS 'Ortanca Adı',LastName AS 'Soyadı',pa.AddressLine1 AS 'ADRES',pa.AddressLine2 AS 'ADRES 2',pa.City AS 'ŞEHİR',pa.PostalCode AS 'POSTA KODU' 
-	FROM Person.Person p
-	INNER JOIN [Person].[BusinessEntityAddress] pea ON pea.BusinessEntityID = p.BusinessEntityID
-	INNER JOIN Person.Address pa ON pa.AddressID = pea.AddressID
-	WHERE p.BusinessEntityID=@BusinessEntityID
-
---Kişi Detayları
-	SELECT TOP 1 FirstName AS 'Adı',MiddleName AS 'Ortanca Adı',LastName AS 'Soyadı',hre.JobTitle As 'İş Tanımı',hre.HireDate AS 'İşe Giriş Tarihi',hre.BirthDate AS 'Doğum Tarihi',hre.Gender AS 'Cinsiyet',hre.VacationHours as 'Dinlendiği Süre',hre.SickLeaveHours AS 'Hasta Kaldığı Süre'
-	FROM Person.Person p 
-	INNER JOIN HumanResources.Employee hre ON p.BusinessEntityID = hre.BusinessEntityID
-	WHERE p.BusinessEntityID = @BusinessEntityID
-
---Mail Bilgileri
-	SELECT TOP 1 FirstName AS 'Adı',MiddleName AS 'Ortanca Adı',LastName AS 'Soyadı',pea.EmailAddress AS 'Email Adresi'
-	FROM Person.Person p 
-	INNER JOIN Person.EmailAddress pea ON pea.BusinessEntityID = p.BusinessEntityID
-	WHERE p.BusinessEntityID=@BusinessEntityID
-
+--DETAY
+SELECT P.FirstName,P.MiddleName,P.LastName,E.JobTitle,E.HireDate,E.BirthDate 
+		FROM [Person].[Person] P
+		INNER JOIN [HumanResources].[Employee] E ON E.BusinessEntityID=P.BusinessEntityID
+WHERE E.BusinessEntityID=@BusinessEntityID
+--ADRES
+SELECT P.BusinessEntityID,PA.AddressID,PA.AddressLine1,PA.City,PA.PostalCode 
+		FROM [Person].[Address] PA 
+		INNER JOIN [Person].[BusinessEntityAddress] BA ON BA.AddressID=PA.AddressID
+		INNER JOIN [Person].[Person] P ON P.BusinessEntityID=BA.BusinessEntityID
+WHERE BA.BusinessEntityID=@BusinessEntityID
+--PHONE
+SELECT P.BusinessEntityID,PP.PhoneNumber,PT.[Name] 
+		FROM [Person].[PersonPhone] PP 
+		INNER JOIN [Person].[Person] P  ON P.BusinessEntityID=PP.BusinessEntityID
+		INNER JOIN [Person].[PhoneNumberType] PT ON PT.PhoneNumberTypeID=PP.PhoneNumberTypeID
+WHERE PP.BusinessEntityID=@BusinessEntityID
+--EMAİLADRES
+SELECT P.BusinessEntityID,PEA.EmailAddress 
+		FROM [Person].[EmailAddress] PEA
+		INNER JOIN [Person].[Person] P ON P.BusinessEntityID=PEA.BusinessEntityID
+WHERE PEA.BusinessEntityID=@BusinessEntityID
 END
 
-EXEC SELECT_EMPLOYEE_DETAILS 1
+
+EXEC SELECT_EMPLOYEE_DETAILS 5
