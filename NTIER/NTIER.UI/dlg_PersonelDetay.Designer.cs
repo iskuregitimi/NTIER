@@ -32,11 +32,6 @@
             this.dgv_Tel = new System.Windows.Forms.DataGridView();
             this.dgv_Email = new System.Windows.Forms.DataGridView();
             this.lbl_Id = new System.Windows.Forms.Label();
-            this.lbl_JobTitle = new System.Windows.Forms.Label();
-            this.lbl_HireDate = new System.Windows.Forms.Label();
-            this.lbl_Name = new System.Windows.Forms.Label();
-            this.lbl_Surname = new System.Windows.Forms.Label();
-            this.lbl_BirthDate = new System.Windows.Forms.Label();
             this.dgv_PersonelBilgileri = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Adres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Tel)).BeginInit();
@@ -80,51 +75,6 @@
             this.lbl_Id.TabIndex = 4;
             this.lbl_Id.Text = "label1";
             // 
-            // lbl_JobTitle
-            // 
-            this.lbl_JobTitle.AutoSize = true;
-            this.lbl_JobTitle.Location = new System.Drawing.Point(240, 55);
-            this.lbl_JobTitle.Name = "lbl_JobTitle";
-            this.lbl_JobTitle.Size = new System.Drawing.Size(46, 17);
-            this.lbl_JobTitle.TabIndex = 5;
-            this.lbl_JobTitle.Text = "label2";
-            // 
-            // lbl_HireDate
-            // 
-            this.lbl_HireDate.AutoSize = true;
-            this.lbl_HireDate.Location = new System.Drawing.Point(368, 55);
-            this.lbl_HireDate.Name = "lbl_HireDate";
-            this.lbl_HireDate.Size = new System.Drawing.Size(46, 17);
-            this.lbl_HireDate.TabIndex = 6;
-            this.lbl_HireDate.Text = "label3";
-            // 
-            // lbl_Name
-            // 
-            this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(482, 55);
-            this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(46, 17);
-            this.lbl_Name.TabIndex = 7;
-            this.lbl_Name.Text = "label4";
-            // 
-            // lbl_Surname
-            // 
-            this.lbl_Surname.AutoSize = true;
-            this.lbl_Surname.Location = new System.Drawing.Point(602, 55);
-            this.lbl_Surname.Name = "lbl_Surname";
-            this.lbl_Surname.Size = new System.Drawing.Size(46, 17);
-            this.lbl_Surname.TabIndex = 8;
-            this.lbl_Surname.Text = "label5";
-            // 
-            // lbl_BirthDate
-            // 
-            this.lbl_BirthDate.AutoSize = true;
-            this.lbl_BirthDate.Location = new System.Drawing.Point(748, 55);
-            this.lbl_BirthDate.Name = "lbl_BirthDate";
-            this.lbl_BirthDate.Size = new System.Drawing.Size(46, 17);
-            this.lbl_BirthDate.TabIndex = 9;
-            this.lbl_BirthDate.Text = "label6";
-            // 
             // dgv_PersonelBilgileri
             // 
             this.dgv_PersonelBilgileri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -140,11 +90,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 699);
             this.Controls.Add(this.dgv_PersonelBilgileri);
-            this.Controls.Add(this.lbl_BirthDate);
-            this.Controls.Add(this.lbl_Surname);
-            this.Controls.Add(this.lbl_Name);
-            this.Controls.Add(this.lbl_HireDate);
-            this.Controls.Add(this.lbl_JobTitle);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.dgv_Tel);
             this.Controls.Add(this.dgv_Email);
@@ -167,11 +112,6 @@
         private System.Windows.Forms.DataGridView dgv_Tel;
         private System.Windows.Forms.DataGridView dgv_Email;
         private System.Windows.Forms.Label lbl_Id;
-        private System.Windows.Forms.Label lbl_JobTitle;
-        private System.Windows.Forms.Label lbl_HireDate;
-        private System.Windows.Forms.Label lbl_Name;
-        private System.Windows.Forms.Label lbl_Surname;
-        private System.Windows.Forms.Label lbl_BirthDate;
         private System.Windows.Forms.DataGridView dgv_PersonelBilgileri;
     }
 }

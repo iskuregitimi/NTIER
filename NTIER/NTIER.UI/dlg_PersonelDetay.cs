@@ -25,8 +25,7 @@ namespace NTIER.UI
            
             DataSet ds = EmployeeBLL.SelectEmployeeDetails(frm_PersonelListesi.BusinessEntityID);
 
-            //lbl_Id.Text = BusinessEntityID.ToString();
-
+            //lbl_Id.Text = BusinessEntityID.ToString();        
             //lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
             //lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
             //lbl_Name.Text = ds.Tables[0].Rows[0][3].ToString();
