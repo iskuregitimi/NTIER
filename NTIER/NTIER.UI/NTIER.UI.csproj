@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -111,6 +116,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,6 +138,10 @@
     <ProjectReference Include="..\NTIER.DAL\NTIER.DAL.csproj">
       <Project>{0B56C88C-1D14-4700-B159-485B07C63A72}</Project>
       <Name>NTIER.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTIER.EF\NTIER.EF.csproj">
+      <Project>{BF662B55-C9D6-43FE-AB8C-9603455F1D17}</Project>
+      <Name>NTIER.EF</Name>
     </ProjectReference>
     <ProjectReference Include="..\NTIER.ENTITY\NTIER.ENTITY.csproj">
       <Project>{46d9d98a-a23b-4ec2-9f31-e848a0e029ce}</Project>

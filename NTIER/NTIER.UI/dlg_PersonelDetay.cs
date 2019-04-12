@@ -15,7 +15,7 @@ namespace NTIER.UI
 {
     public partial class dlg_PersonelDetay : Form
     {
-        Employee selectedEmployee = new Employee();
+        EF.Employee selectedEmployee;
 
         public dlg_PersonelDetay()
         {
@@ -27,33 +27,24 @@ namespace NTIER.UI
 
         private void dlg_PersonelDetay_Load(object sender, EventArgs e)
         {
-            DataSet ds = EmployeeBLL.SelectEmployeeDetails(BusinessEntityID);
+
+            selectedEmployee = EmployeeBLL.GetEmployee(BusinessEntityID);
 
             lbl_Id.Text = BusinessEntityID.ToString();
 
-
-            lbl_HireDate.Text = ds.Tables[0].Rows[0]["HireDate"].ToString();
-            lbl_Name.Text = ds.Tables[0].Rows[0]["FirstName"].ToString();
-            lbl_Surname.Text = ds.Tables[0].Rows[0]["LastName"].ToString();
-            txt_JobTitle.Text = ds.Tables[0].Rows[0]["JobTitle"].ToString();
-
-            selectedEmployee.BusinessEntityID = BusinessEntityID;
-            selectedEmployee.HireDate = DateTime.Parse(ds.Tables[0].Rows[0]["HireDate"].ToString());
-            selectedEmployee.JobTitle = ds.Tables[0].Rows[0]["JobTitle"].ToString();
+            lbl_HireDate.Text = selectedEmployee.HireDate.ToString();
+            lbl_Name.Text = selectedEmployee.Person.FirstName;
+            lbl_Surname.Text = selectedEmployee.Person.LastName;
+            txt_JobTitle.Text = selectedEmployee.JobTitle;
 
 
-            dgv_Adres.DataSource = null;
-            dgv_Adres.DataSource = ds.Tables[1];
 
             dgv_Tel.DataSource = null;
-            dgv_Tel.DataSource = ds.Tables[2];
+            dgv_Tel.DataSource = selectedEmployee.Person.PersonPhones.ToList();
+
 
             dgv_Email.DataSource = null;
-            dgv_Email.DataSource = ds.Tables[3];
-
-
-            dgv_Email.Columns["EmailAddressID"].Visible = false;
-            dgv_Email.Columns["rowguid"].Visible = false;
+            dgv_Email.DataSource = selectedEmployee.Person.EmailAddresses.ToList();
 
         }
 
@@ -96,7 +87,7 @@ namespace NTIER.UI
                 selectedEmployee.HireDate = selectedEmployee.HireDate.AddYears(-1);
 
 
-                EmployeeBLL.UpdateEmployeBLL(selectedEmployee);
+                // EmployeeBLL.UpdateEmployeBLL(selectedEmployee);
 
                 MessageBox.Show("Personel güncellendi");
             }

@@ -31,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,10 +55,17 @@
       <Project>{0b56c88c-1d14-4700-b159-485b07c63a72}</Project>
       <Name>NTIER.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NTIER.EF\NTIER.EF.csproj">
+      <Project>{bf662b55-c9d6-43fe-ab8c-9603455f1d17}</Project>
+      <Name>NTIER.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NTIER.ENTITY\NTIER.ENTITY.csproj">
       <Project>{46d9d98a-a23b-4ec2-9f31-e848a0e029ce}</Project>
       <Name>NTIER.ENTITY</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

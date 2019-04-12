@@ -64,5 +64,10 @@ namespace NTIER.UI
 		{
 
 		}
-	}
+
+        private void eFİlePersonelDetayıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var employee=EmployeeBLL.GetEmployee(1);
+        }
+    }
 }

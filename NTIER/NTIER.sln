@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTIER.DAL", "NTIER.DAL\NTIE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTIER.ENTITY", "NTIER.ENTITY\NTIER.ENTITY.csproj", "{46D9D98A-A23B-4EC2-9F31-E848A0E029CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTIER.EF", "NTIER.EF\NTIER.EF.csproj", "{BF662B55-C9D6-43FE-AB8C-9603455F1D17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{46D9D98A-A23B-4EC2-9F31-E848A0E029CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46D9D98A-A23B-4EC2-9F31-E848A0E029CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46D9D98A-A23B-4EC2-9F31-E848A0E029CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF662B55-C9D6-43FE-AB8C-9603455F1D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF662B55-C9D6-43FE-AB8C-9603455F1D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF662B55-C9D6-43FE-AB8C-9603455F1D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF662B55-C9D6-43FE-AB8C-9603455F1D17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

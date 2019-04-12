@@ -43,7 +43,7 @@ namespace NTIER.BLL
         {
             if (AddressValidator.Validate(adres) == true)
             {
-                DataContext.InsertEmployeeAddress(businessEntityId,adres);
+                DataContext.InsertEmployeeAddress(businessEntityId, adres);
             }
             else
             {
@@ -87,21 +87,33 @@ namespace NTIER.BLL
             return ds = DataContext.SelectEmployeeDetails(BusinessEntityID);
         }
 
-		public static void EmailSil_BLL(int EmailAdresID)
+        public static void EmailSil_BLL(int EmailAdresID)
 
-		{
-			DataContext.EmailSil(EmailAdresID);
+        {
+            DataContext.EmailSil(EmailAdresID);
 
-		}
+        }
 
         public static void UpdateEmployeBLL(Employee selectedEmployee)
         {
-            if (selectedEmployee.BusinessEntityID==0)
+            if (selectedEmployee.BusinessEntityID == 0)
             {
                 throw new Exception("personel seçilmemiş");
             }
 
             DataContext.UpdateEmployee(selectedEmployee);
+        }
+
+        public static NTIER.EF.Employee GetEmployee(int BusinessEntityID)
+        {
+            EF.AdventureWorksContext dataContext = new EF.AdventureWorksContext();
+
+            NTIER.EF.Employee emp = dataContext.Employees
+                                        .Where(e => e.BusinessEntityID == BusinessEntityID)
+                                        .FirstOrDefault();
+
+            return emp;
+
         }
     }
 }
