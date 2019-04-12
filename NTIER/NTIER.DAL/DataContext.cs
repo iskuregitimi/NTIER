@@ -284,5 +284,18 @@ namespace NTIER.DAL
         }
 
 
+
+		public static void EmailSil(int EmailAdressID)
+		{
+			SqlCommand cmd = new SqlCommand("Delete_Email",Connection);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@EmailAdressID", EmailAdressID);
+			Connection.Open();
+			cmd.ExecuteNonQuery();
+
+			Connection.Close();
+
+		}
+
     }
 }

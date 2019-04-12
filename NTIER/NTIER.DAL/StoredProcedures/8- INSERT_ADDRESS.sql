@@ -1,4 +1,4 @@
-﻿CREATE PROC[INSERT_ADDRESS]
+﻿alter PROC[INSERT_ADDRESS]
     @AddressLine1 nvarchar(60),
     @AddressLine2 nvarchar(60) = NULL,
     @City nvarchar(30),

@@ -1,9 +1,9 @@
-﻿ALTER PROC SELECT_EMPLOYEE_DETAILS
+﻿alter PROC SELECT_EMPLOYEE_DETAILS
 	@BusinessEntityID INT
 
 AS
 BEGIN
-	SELECT he.JobTitle,he.HireDate,pp.FirstName,pp.LastName,he.BirthDate FROM HumanResources.Employee he
+	SELECT he.BusinessEntityID,he.JobTitle,he.HireDate,pp.FirstName,pp.LastName,he.BirthDate FROM HumanResources.Employee he
 		INNER JOIN Person.Person pp ON he.BusinessEntityID=pp.BusinessEntityID
 	WHERE HE.BusinessEntityID=@BusinessEntityID
 
@@ -11,9 +11,10 @@ BEGIN
 		INNER JOIN Person.BusinessEntityAddress pba ON pa.AddressID=pba.AddressID
 	WHERE pba.BusinessEntityID=@BusinessEntityID
 
-	SELECT ppp.PhoneNumber FROM Person.PersonPhone ppp
+	SELECT * FROM Person.PersonPhone ppp
 	WHERE ppp.BusinessEntityID=@BusinessEntityID
 
-	SELECT pea.EmailAddress FROM Person.EmailAddress pea
+	SELECT * FROM Person.EmailAddress pea
 	WHERE pea.BusinessEntityID=@BusinessEntityID
 END
+

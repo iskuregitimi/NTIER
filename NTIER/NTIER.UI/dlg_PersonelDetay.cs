@@ -19,7 +19,8 @@ namespace NTIER.UI
             InitializeComponent();
         }
 
-        public int BusinessEntityID;
+        public int BusinessEntityID=0;
+		public int EmailAdressId = 0;
 
         private void dlg_PersonelDetay_Load(object sender, EventArgs e)
         {
@@ -27,13 +28,13 @@ namespace NTIER.UI
 
             lbl_Id.Text = BusinessEntityID.ToString();
 
-            //lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
-            //lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
-            //lbl_Name.Text = ds.Tables[0].Rows[0][3].ToString();
-            //lbl_Surname.Text = ds.Tables[0].Rows[0][4].ToString();
-            //lbl_BirthDate.Text = ds.Tables[0].Rows[0][5].ToString();
+			//lbl_JobTitle.Text = ds.Tables[0].Rows[0][1].ToString();
+			//lbl_HireDate.Text = ds.Tables[0].Rows[0][2].ToString();
+			//lbl_Name.Text = ds.Tables[0].Rows[0][3].ToString();
+			//lbl_Surname.Text = ds.Tables[0].Rows[0][4].ToString();
+			
 
-            dgv_PersonelBilgileri.DataSource = null;
+			dgv_PersonelBilgileri.DataSource = null;
             dgv_PersonelBilgileri.DataSource = ds.Tables[0];
 
             dgv_Adres.DataSource = null;
@@ -49,5 +50,28 @@ namespace NTIER.UI
 
 
         }
-    }
+
+		private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+		{
+
+		}
+
+		private void dgv_Email_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void silToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+	
+			EmailAdressId = int.Parse(dgv_Email.SelectedRows[0].Cells[1].Value.ToString());
+			EmployeeBLL.EmailSil_BLL(EmailAdressId);
+			MessageBox.Show("Email adresi Silindi");
+
+			//dlg_PersonelDetay_Load(null,null);
+
+			dgv_Email.Rows.Remove(dgv_Email.SelectedRows[0]);
+			dgv_Email.Refresh();
+		}
+	}
 }

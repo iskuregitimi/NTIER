@@ -55,8 +55,14 @@ namespace NTIER.UI
         {
 
             dlg_PersonelDetay frm = new dlg_PersonelDetay();
-            frm.Show();
+			frm.BusinessEntityID = int.Parse(dgv_PersonelListesi.SelectedRows[0].Cells[0].Value.ToString());
+			frm.Show();
 
         }
-    }
+
+		private void cms_Personel_Opening(object sender, CancelEventArgs e)
+		{
+
+		}
+	}
 }

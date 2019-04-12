@@ -86,5 +86,13 @@ namespace NTIER.BLL
 
             return ds = DataContext.SelectEmployeeDetails(BusinessEntityID);
         }
-    }
+
+		public static void EmailSil_BLL(int EmailAdresID)
+
+		{
+			DataContext.EmailSil(EmailAdresID);
+
+		}
+
+	}
 }
