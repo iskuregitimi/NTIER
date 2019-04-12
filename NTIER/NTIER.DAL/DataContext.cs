@@ -283,7 +283,7 @@ namespace NTIER.DAL
 
         public static DataSet SelectEmployeeDetails(int BusinessEntityID)
         {
-            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAIL", Connection);
+            SqlCommand cmd = new SqlCommand("SELECT_EMPLOYEE_DETAILS", Connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@BusinessEntityID", BusinessEntityID);
 

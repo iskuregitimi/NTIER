@@ -29,31 +29,33 @@ namespace NTIER.UI
         private void dlg_PersonelDetay_Load(object sender, EventArgs e)
         {
             dgv_Email.ClearSelection();
-            DataSet ds = EmployeeBLL.SelectEmployeeDetails(BusinessEntityID);
+            //DataSet ds = EmployeeBLL.SelectEmployeeDetails(BusinessEntityID);
+
+            EF.Employee employee = EmployeeBLL.GetEmployee(BusinessEntityID);
 
             lbl_Id.Text = BusinessEntityID.ToString();
 
 
-            lbl_HireDate.Text = ds.Tables[0].Rows[0]["HireDate"].ToString();
-            lbl_Name.Text = ds.Tables[0].Rows[0]["FirstName"].ToString();
-            lbl_Surname.Text = ds.Tables[0].Rows[0]["LastName"].ToString();
-            txt_JobTitle.Text = ds.Tables[0].Rows[0]["JobTitle"].ToString();
+            lbl_HireDate.Text = employee.HireDate.ToString();
+            lbl_Name.Text = employee.Person.FirstName;
+            lbl_Surname.Text = employee.Person.LastName;
+            txt_JobTitle.Text = employee.JobTitle;
 
             selectedEmployee.BusinessEntityID = BusinessEntityID;
-            selectedEmployee.HireDate = DateTime.Parse(ds.Tables[0].Rows[0]["HireDate"].ToString());
-            selectedEmployee.JobTitle = ds.Tables[0].Rows[0]["JobTitle"].ToString();
+            //selectedEmployee.HireDate = DateTime.Parse(ds.Tables[0].Rows[0]["HireDate"].ToString());
+            //selectedEmployee.JobTitle = ds.Tables[0].Rows[0]["JobTitle"].ToString();
 
 
-            dgv_Adres.DataSource = null;
-            dgv_Adres.DataSource = ds.Tables[1];
-            dgv_Adres.ClearSelection();
+            //dgv_Adres.DataSource = null;
+            //dgv_Adres.DataSource = ds.Tables[1];
+            //dgv_Adres.ClearSelection();
 
             dgv_Tel.DataSource = null;
-            dgv_Tel.DataSource = ds.Tables[2];
+            dgv_Tel.DataSource = employee.Person.PersonPhones.ToList();
             dgv_Tel.ClearSelection();
 
             dgv_Email.DataSource = null;
-            dgv_Email.DataSource = ds.Tables[3];
+            dgv_Email.DataSource = employee.Person.EmailAddresses.ToList();
             dgv_Email.ClearSelection();
 
 
