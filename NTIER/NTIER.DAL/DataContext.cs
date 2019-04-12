@@ -274,7 +274,6 @@ namespace NTIER.DAL
             Connection.Open();
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-
             DataSet ds = new DataSet();
             da.Fill(ds);
 

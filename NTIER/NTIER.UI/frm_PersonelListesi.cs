@@ -18,10 +18,14 @@ namespace NTIER.UI
             InitializeComponent();
         }
 
+        public static int BusinessEntityID { get; set; }
+
         private void frm_PersonelListesi_Load(object sender, EventArgs e)
         {
             DataTable dt = EmployeeBLL.SearchEmployeeBLL(string.Empty);
             dgv_PersonelListesi.DataSource = dt;
+
+            
         }
 
         private void txt_SearchBox_TextChanged(object sender, EventArgs e)
@@ -53,7 +57,7 @@ namespace NTIER.UI
 
         private void detaylarıGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            BusinessEntityID = (int)dgv_PersonelListesi.CurrentRow.Cells[0].Value;
             dlg_PersonelDetay frm = new dlg_PersonelDetay();
             frm.Show();
 
